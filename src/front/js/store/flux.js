@@ -63,38 +63,28 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
       },
 
-      createUser: async (email, password) => {
+      createUser: async (email, password, phone_number, username) => {
         try {
           const opts = await fetch(process.env.BACKEND_URL + "/api/user", {
             method: "POST",
-            header: {
+            headers: {
               "Content-Type": "application/json",
-              "Access-Control-Allow-Origin": "*",
             },
-            body: JSON.stringify({ email, password }),
+            body: JSON.stringify({ email, password, phone_number, username }),
           });
           if (opts.ok) {
             const token = await opts.json();
             sessionStorage.setItem("token", json.stringify(token));
-            getActions().getActiveUser(email);
+            getActions().getUser(email);
             return true;
           } else {
-            throw "createuser error";
+            throw "create user error";
           }
         } catch (error) {
           throw Error("Encountered Error on createuser");
         }
       },
 
-      getMessage: () => {
-        // fetching data from the backend
-        fetch(process.env.BACKEND_URL + "/api/hello")
-          .then((resp) => resp.json())
-          .then((data) => setStore({ message: data.message }))
-          .catch((error) =>
-            console.log("Error loading message from backend", error)
-          );
-      },
       changeColor: (index, color) => {
         //get the store
         const store = getStore();

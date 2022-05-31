@@ -14,7 +14,9 @@ export const Signup = () => {
 
   const handleClick = (e) => {
     e.preventDefault();
-    actions.createUser(email, password).then((data) => history.push("/"));
+    actions
+      .createUser(email, password, username, phone_number)
+      .then((data) => history.push("/"));
   };
   return (
     <div>
@@ -66,7 +68,7 @@ export const Signup = () => {
         <br />
         <div className="submitdiv">
           <input
-            href="/demo"
+            href="/"
             onClick={handleClick}
             className="submitbtn"
             placeholder="Sign up"

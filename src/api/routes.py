@@ -8,14 +8,6 @@ from flask_jwt_extended import JWTManager
 
 api = Blueprint('api', __name__)
 
-@api.route('/hello', methods=['POST', 'GET'])
-def handle_hello():
-
-    response_body = {
-        "message": "Hello! I'm a message that came from the backend, check the network tab on the google inspector and you will see the GET request"
-    }
-
-    return jsonify(response_body), 20
 
 @api.route('/private', methods=['POST'])
 def private():
@@ -54,12 +46,12 @@ def create_user():
     password = body["password"]
     username = body["username"]
     phone_number = body["phone_number"]
-    user = User(email=email, password=password)
+    user = User(email=email, password=password, username=username, phone_number=phone_number)
 
     db.session.add(user)
     db.session.commit()
     
-    return (jsonify(user.serialize))
+    return (jsonify(user.serialize())), 201
 
 @api.route('/users', methods=['GET'])
 def get_users():
