@@ -1,36 +1,34 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, Component } from "react";
 import { Context } from "../store/appContext";
 import rigoImageUrl from "../../img/rigo-baby.jpg";
 import "../../styles/login.css";
 import { useHistory } from "react-router-dom";
 
-export const Login = () => {
+export const Signup = () => {
   const { store, actions } = useContext(Context);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
+  const [phone_number, setPhoneNumber] = useState("");
   const history = useHistory("");
 
   const handleClick = (e) => {
-    actions.login(email, password).then((data) => history.push("/"));
     e.preventDefault();
+    actions.createUser(email, password).then((data) => history.push("/"));
   };
   return (
     <div>
-      <form action="" className="form">
-        {/* <img
-          className="tesla"
-          src="https://cdn.discordapp.com/attachments/617586904866619402/980209760295092325/IMG_2956.jpg"
-        /> */}
+      <form className="form">
         <div className="top">
           <img
             className="logo"
             src="https://media.discordapp.net/attachments/617586904866619402/977376727657508904/Add_a_heading_2.png"
           />
           <br />
-          <a href="/" className="active">
+          <a href="/" className="Login">
             Login
           </a>
-          <a href="/signup" className="unactive">
+          <a href="/signup" className="Signup">
             Signup
           </a>
         </div>
@@ -44,31 +42,34 @@ export const Login = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <br />
           <input
             type="password"
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+          <input
+            type="username"
+            placeholder="Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <input
+            type="phone_number"
+            placeholder="Phone Number"
+            value={phone_number}
+            onChange={(e) => setPhoneNumber(e.target.value)}
+          />
           <br />
-
-          {/* <a href="#" className="forgotpsw">
-          <input type="text" className="inputs" placeholder="Email Address" />
-          <input type="text" className="inputs" placeholder="Password" />
-          <br />
-          <a href="#" className="forgotpsw">
-            Forgot Password?
-          </a> */}
         </div>
         <br />
         <br />
         <div className="submitdiv">
           <input
-            onClick={handleClick}
             href="/demo"
+            onClick={handleClick}
             className="submitbtn"
-            placeholder="Login"
+            placeholder="Sign up"
           />
         </div>
         <br />

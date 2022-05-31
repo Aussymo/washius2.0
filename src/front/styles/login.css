@@ -1,0 +1,100 @@
+:root {
+  --bg-blue: linear-gradient(to right, #104c74, #00b3cb);
+  --white: #fff;
+  --black: #000;
+  --blue: #268291;
+}
+body {
+  background: rgb(53, 53, 53);
+  font-family: Monaco;
+}
+.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 75%;
+  width: 200px;
+}
+.form {
+  width: 500px;
+  height: 700px;
+  background: var(--white);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  border-radius: 5px;
+  padding: 5px 40px;
+}
+.top {
+  text-align: center;
+}
+.active {
+  background: var(--bg-blue);
+  color: white;
+}
+.unactive {
+  background: var(--white);
+  color: black;
+}
+.top a {
+  width: 200px;
+  border: 1px solid grey;
+  padding: 15px 75px;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-left: -5px;
+}
+.data {
+  text-align: center;
+}
+input {
+  width: 100%;
+  padding: 15px 0px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  outline: none;
+  font-size: 18px;
+  text-indent: 10px;
+}
+.forgotpsw {
+  float: left;
+  color: var(--blue);
+  text-decoration: none;
+}
+.submitbtn {
+  width: 100%;
+  padding: 15px 10px;
+  background: var(--bg-blue);
+  color: white;
+  font-size: 20px;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+}
+.submitbtn:hover {
+  cursor: pointer;
+}
+.footer {
+  text-align: center;
+}
+.signupbtn {
+  color: var(--blue);
+  text-decoration: none;
+  font-size: 18px;
+}
+#tag {
+  background: black;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: 10px;
+  float: right;
+  user-select: none;
+}
+.tesla {
+  width: 500px;
+  height: 300px;
+}
