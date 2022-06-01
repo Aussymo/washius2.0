@@ -69,6 +69,31 @@ def serve_any_other_file(path):
     response.cache_control.max_age = 0 # avoid cache memory
     return response
 
+# To Do Lists
+
+# todos = [
+#     { "label": "My first task", "done": False },
+#     { "label": "My second task", "done": False }
+# ]
+
+# @app.route('/todos', methods=['GET'])
+# def hello_world():
+#     json_text = jsonify(todos)
+#     return json_text
+
+# @app.route('/todos', methods=['POST'])
+# def add_new_todo():
+#     request_body = request.data
+#     decoded_object = json.loads(request_body)
+#     todos.append(decoded_object)
+#     print("Incoming request with the following body", request_body)
+#     return jsonify(todos)
+
+# @app.route('/todos/<int:position>', methods=['DELETE'])
+# def delete_todo(position):
+#     del todos[position]
+#     print("This is the position to delete: ",position)
+#     return jsonify(todos)
 
 # this only runs if `$ python src/main.py` is executed
 if __name__ == '__main__':

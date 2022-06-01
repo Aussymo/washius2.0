@@ -24,7 +24,7 @@ export const Login = () => {
         <div className="top">
           <img
             className="logo"
-            src="https://media.discordapp.net/attachments/617586904866619402/977376727657508904/Add_a_heading_2.png"
+            src="https://cdn.discordapp.com/attachments/617586904866619402/981352043421769728/Add_a_heading_2.png"
           />
           <br />
           <a href="/" className="active">
