@@ -28,11 +28,11 @@ body {
 .top {
   text-align: center;
 }
-.active {
+.Login {
   background: var(--bg-blue);
   color: white;
 }
-.unactive {
+.Signup {
   background: var(--white);
   color: black;
 }

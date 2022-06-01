@@ -1,7 +1,7 @@
 import React, { useContext, useState, Component } from "react";
 import { Context } from "../store/appContext";
 import rigoImageUrl from "../../img/rigo-baby.jpg";
-import "../../styles/login.css";
+import "../../styles/signup.css";
 import { useHistory } from "react-router-dom";
 
 export const Signup = () => {
