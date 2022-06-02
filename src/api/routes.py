@@ -27,6 +27,8 @@ def create_token():
     user = User.query.filter_by(email=email).first()
     if user is None:
         return jsonify({"Message": "User not found"}), 401
+    if password != user.password:
+        return jsonify({"Message": "Please check your info"})
     access_token = create_access_token(identity=email)
     return jsonify(access_token=access_token)
     print(access_token)

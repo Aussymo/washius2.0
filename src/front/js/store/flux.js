@@ -13,11 +13,11 @@ const getState = ({ getStore, getActions, setStore }) => {
           setStore({ token: token });
       },
 
-      // logout: () => {
-      // 	sessionStorage.clear();
-      // 	console.log("logout")
-      // 	setStore({ token: null })
-      // },
+      logout: () => {
+        sessionStorage.clear();
+        console.log("logout");
+        setStore({ token: null });
+      },
 
       getUser: async (email) => {
         try {
@@ -39,7 +39,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
       },
 
-      login: async (email, password) => {
+      login: async (email, password, history) => {
         try {
           const opts = await fetch(process.env.BACKEND_URL + "/api/token", {
             method: "POST",
@@ -55,8 +55,11 @@ const getState = ({ getStore, getActions, setStore }) => {
             console.log("this came from backend", opts);
             sessionStorage.setItem("token", JSON.stringify(data));
             getActions().getUser(email);
+            history.push("/app");
             // setStore({ token: data.access_token })
             return true;
+          } else {
+            throw "something went wrong";
           }
         } catch (error) {
           throw Error("error on login");

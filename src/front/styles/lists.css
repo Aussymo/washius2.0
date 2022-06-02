@@ -1,33 +1,106 @@
-.content {
-  background: white;
-}
-.container {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 10;
-  width: 400px;
-  padding: 10px;
-  border: 5px solid rgb(78, 76, 76);
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-  margin: 0;
-  background: white;
-}
-h1 {
-  color: black;
-  text-align: center;
-  font-family: sans-serif;
+* {
+  box-sizing: border-box;
+  outline: none;
 }
 
-button {
-  float: right;
-  border: none;
-  background: none;
-  color: rgb(179, 54, 54);
+/* Center the list */
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f3f5fc;
+  font-family: "Open Sans", sans-serif;
 }
-/* list style type none removes bullets */
+
+.App {
+  width: 500px;
+  background: white;
+  border-radius: 9px;
+  border: 1px solid #e7ecfb;
+  box-shadow: 0 0 30px rgba(211, 220, 248, 0.3);
+  padding: 30px;
+}
+
+h1,
+h2 {
+  font-family: "Open Sans", sans-serif;
+  color: rgb(23, 5, 58);
+  text-transform: capitalize;
+}
+
+h2 {
+  font-size: 18px;
+  margin-top: 2rem;
+}
+
+label {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgb(41, 41, 41);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+  color: #3f455f;
+}
+input {
+  width: 100%;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  border: 0;
+  border-radius: 9px;
+  color: #666f99;
+  padding: 12px 60px 12px 18px;
+  background: #f3f5fc;
+}
+
 li {
-  list-style-type: none;
-  border: 1px solid #ddd;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  font-size: 20px;
+  color: rgb(23, 5, 58);
+  margin: 1rem 0;
+}
+
+li > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-grow: 1;
+}
+
+li > button {
+  text-transform: uppercase;
+  background-color: rgb(23, 5, 58);
+  display: block;
+  position: relative;
+  margin-left: 1em;
+  cursor: pointer;
+  height: 35px;
+  line-height: 35px;
+  padding: 0 1.5rem;
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0.8px;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  outline: none;
+  border: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-radius: 2px;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.225);
 }

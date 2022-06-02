@@ -2,12 +2,11 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
-import { Demo } from "./pages/demo";
-import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
 import { Login } from "./pages/login";
 import { Signup } from "./pages/signup";
-import { Lists } from "./pages/lists";
+// import { Calendar  } from "./pages/Cal";
+// import { Lists } from "./pages/lists";
 import { Appbar } from "../js/component/Appbar";
 
 //create your first component
@@ -27,14 +26,8 @@ const Layout = () => {
             <Route exact path="/signup">
               <Signup />
             </Route>
-            <Route exact path="/lists">
-              <Lists />
-            </Route>
             <Route exact path="/app">
               <Appbar />
-            </Route>
-            <Route exact path="/single/:theid">
-              <Single />
             </Route>
             <Route>
               <h1>Not found!</h1>

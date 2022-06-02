@@ -20,7 +20,7 @@ export const Signup = () => {
   };
   return (
     <div>
-      <form className="form">
+      <form onSubmit={handleClick} className="form">
         <div className="top">
           <img
             className="logo"
@@ -67,12 +67,14 @@ export const Signup = () => {
         <br />
         <br />
         <div className="submitdiv">
-          <input
+          <button
             href="/"
             onClick={handleClick}
             className="submitbtn"
             placeholder="Sign up"
-          />
+          >
+            Signup
+          </button>
         </div>
         <br />
         <br />
