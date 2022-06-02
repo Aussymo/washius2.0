@@ -9,14 +9,17 @@ export const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
+  const [error, setError] = useState(null);
   const [phone_number, setPhoneNumber] = useState("");
   const history = useHistory("");
 
   const handleClick = (e) => {
     e.preventDefault();
     actions
-      .createUser(email, password, username, phone_number)
-      .then((data) => history.push("/"));
+      .createUser(email, password, username, phone_number, history)
+      .catch((error) => {
+        setError(error);
+      });
   };
   return (
     <div>
@@ -66,13 +69,13 @@ export const Signup = () => {
         </div>
         <br />
         <br />
+        {error && (
+          <div className="alert alert-danger">
+            <h6>{error.message}</h6>
+          </div>
+        )}
         <div className="submitdiv">
-          <button
-            href="/"
-            onClick={handleClick}
-            className="submitbtn"
-            placeholder="Sign up"
-          >
+          <button href="/" className="submitbtn" placeholder="Sign up">
             Signup
           </button>
         </div>

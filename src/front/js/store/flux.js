@@ -66,19 +66,21 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
       },
 
-      createUser: async (email, password, phone_number, username) => {
+      createUser: async (email, password, phone_number, username, history) => {
         try {
           const opts = await fetch(process.env.BACKEND_URL + "/api/user", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
+              // "Access-Control-Allow-Origin": "*",
             },
             body: JSON.stringify({ email, password, phone_number, username }),
           });
           if (opts.ok) {
             const token = await opts.json();
-            sessionStorage.setItem("token", json.stringify(token));
+            sessionStorage.setItem("token", JSON.stringify(token));
             getActions().getUser(email);
+            history.push("/");
             return true;
           } else {
             throw "create user error";

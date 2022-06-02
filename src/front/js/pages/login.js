@@ -72,7 +72,11 @@ export const Login = () => {
         <br />
         <br />
         <div className="submitdiv">
-          <button href="/app" className="submitbtn" placeholder="Login">
+          <button
+            href="/app"
+            className="submitbtn glow-on-hover"
+            placeholder="Login"
+          >
             Login
           </button>
         </div>
