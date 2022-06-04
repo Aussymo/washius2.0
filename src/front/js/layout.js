@@ -5,6 +5,7 @@ import ScrollToTop from "./component/scrollToTop";
 import injectContext from "./store/appContext";
 import { Login } from "./pages/login";
 import { Signup } from "./pages/signup";
+import Lists from "./pages/Lists";
 // import { Calendar  } from "./pages/Cal";
 // import { Lists } from "./pages/lists";
 import { Appbar } from "../js/component/Appbar";
@@ -28,6 +29,9 @@ const Layout = () => {
             </Route>
             <Route exact path="/app">
               <Appbar />
+            </Route>
+            <Route exact path="/lists">
+              <Lists />
             </Route>
             <Route>
               <h1>Not found!</h1>

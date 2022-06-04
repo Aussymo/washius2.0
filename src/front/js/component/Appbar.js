@@ -6,6 +6,8 @@ import {
   Nav,
   NavDropdown,
 } from "react-bootstrap";
+import "../../styles/Appbar.css";
+import { Link } from "react-router-dom";
 
 export const Appbar = () => {
   return (
@@ -14,7 +16,13 @@ export const Appbar = () => {
         {[false].map((expand) => (
           <Navbar key={expand} bg="primary" expand={expand} className="mb-3">
             <Container fluid>
-              <Navbar.Brand href="/dashboard">Washius</Navbar.Brand>
+              <Navbar.Brand href="/dashboard">
+                Washius
+                {/* <img
+                  className="logos"
+                  src="https://cdn.discordapp.com/attachments/617586904866619402/981352043421769728/Add_a_heading_2.png"
+                /> */}
+              </Navbar.Brand>
               <Navbar.Toggle
                 aria-controls={`offcanvasNavbar-expand-${expand}`}
               />
@@ -30,31 +38,39 @@ export const Appbar = () => {
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                   <Nav className="justify-content-end flex-grow-1 pe-3">
-                    <NavDropdown
-                      title="Opening"
+                    {/* <NavDropdown
+                      title="Lists"
                       id={`offcanvasNavbarDropdown-expand-${expand}`}
                     >
                       <NavDropdown.Item href="#action1">
                         Ghost Car
                       </NavDropdown.Item>
+                      <br />
                       <NavDropdown.Item href="#action2">
-                        Turn System On
+                        Opening Duties
                       </NavDropdown.Item>
-                      <NavDropdown.Divider />
+                      <br />
                       <NavDropdown.Item href="#action3">
-                        Turn Equipment On
+                        Shift Change
                       </NavDropdown.Item>
-                      <NavDropdown.Item href="#action4">Stock</NavDropdown.Item>
-                      <NavDropdown.Divider />
+                      <br />
+                      <NavDropdown.Item href="#action4">
+                        Closing Duties
+                      </NavDropdown.Item>
+                      <br />
                       <NavDropdown.Item href="#action5">
-                        Cleaning Procedure
+                        5 A day
                       </NavDropdown.Item>
+                      <br />
                       <NavDropdown.Item href="#action6">
-                        Load Equipment
+                        Rainy Day
                       </NavDropdown.Item>
-                    </NavDropdown>
-                    <Nav.Link href="#action7">5 A Day</Nav.Link>
-                    <Nav.Link href="#action8">Daily Duties</Nav.Link>
+                    </NavDropdown> */}
+                    <Nav.Link>
+                      <Link to="/lists">List</Link>
+                    </Nav.Link>
+                    <Nav.Link href="#action7">Calendar PMs</Nav.Link>
+                    <Nav.Link href="#action8"></Nav.Link>
                     <NavDropdown
                       title="PMS"
                       id={`offcanvasNavbarDropdown-expand-${expand}`}
