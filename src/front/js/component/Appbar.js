@@ -6,7 +6,6 @@ import {
   Nav,
   NavDropdown,
 } from "react-bootstrap";
-import "../../styles/Appbar.css";
 import { Link } from "react-router-dom";
 
 export const Appbar = () => {
@@ -42,8 +41,8 @@ export const Appbar = () => {
                       title="Lists"
                       id={`offcanvasNavbarDropdown-expand-${expand}`}
                     >
-                      <NavDropdown.Item href="#action1">
-                        Ghost Car
+                      <NavDropdown.Item>
+                        <Link to="/ghostcar">Ghost Car</Link>
                       </NavDropdown.Item>
                       <br />
                       <NavDropdown.Item href="#action2">
