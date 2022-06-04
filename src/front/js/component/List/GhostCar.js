@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Appbar } from "../component/Appbar";
+// import { Appbar } from "../Appbar";
 
 export const GhostCar = () => {
   const checkList = [
@@ -30,7 +30,7 @@ export const GhostCar = () => {
 
   return (
     <div>
-      <Appbar />
+      {/* <Appbar /> */}
       <div className="checkList">
         <img
           src="https://cdn-icons-png.flaticon.com/512/20/20973.png"

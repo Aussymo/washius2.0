@@ -9,7 +9,7 @@ import Lists from "./pages/Lists";
 // import { Calendar  } from "./pages/Cal";
 // import { Lists } from "./pages/lists";
 import { Appbar } from "../js/component/Appbar";
-import { GhostCar } from "./pages/GhostCar";
+// import { GhostCar } from "./pages/GhostCar";
 
 //create your first component
 const Layout = () => {
@@ -31,9 +31,9 @@ const Layout = () => {
             <Route exact path="/app">
               <Appbar />
             </Route>
-            <Route exact path="/ghostcar">
+            {/* <Route exact path="/ghostcar">
               <GhostCar />
-            </Route>
+            </Route> */}
             <Route exact path="/lists">
               <Lists />
             </Route>

@@ -10,11 +10,12 @@ class User(db.Model):
     phone_number = db.Column(db.String(80), unique=True, nullable=False)
     # is_active = db.Column(db.Boolean(), unique=False, nullable=False)
 
-class Events(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(120), unique=True, nullable=False)
-    date = db.Column(db.String(80), unique=True, nullable=False)
-    company= db.Column(db.String(120), unique=True, nullable=False)
+# class Events(db.Model):
+#     Event_id = db.Column(db.Integer, primary_key=True)
+#     name = db.Column(db.String(120), unique=True, nullable=False)
+#     date = db.Column(db.String(80), unique=True, nullable=False)
+#     date_completed= db.Column(db.String(120), unique=False, nullable=False)
+#     company= db.Column(db.String(120), unique=True, nullable=False)
     
 
 
