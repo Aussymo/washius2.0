@@ -2,7 +2,7 @@
 import { TabPanel, useTabs } from "react-headless-tabs";
 import * as React from "react";
 import { GhostCar } from "../component/List/GhostCar";
-import { Appbar } from "../component/Appbar";
+import { Appbar } from "../component/Appbar/Appbar";
 
 export default function Lists() {
   const items = [

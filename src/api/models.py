@@ -15,7 +15,7 @@ class User(db.Model):
 #     name = db.Column(db.String(120), unique=True, nullable=False)
 #     date = db.Column(db.String(80), unique=True, nullable=False)
 #     date_completed= db.Column(db.String(120), unique=False, nullable=False)
-#     company= db.Column(db.String(120), unique=True, nullable=False)
+#     company= db.Column(db.String(120), unique=False, nullable=False)
     
 
 

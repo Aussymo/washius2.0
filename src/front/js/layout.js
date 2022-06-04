@@ -8,7 +8,7 @@ import { Signup } from "./pages/signup";
 import Lists from "./pages/Lists";
 // import { Calendar  } from "./pages/Cal";
 // import { Lists } from "./pages/lists";
-import { Appbar } from "../js/component/Appbar";
+import { Appbar } from "./component/Appbar/Appbar";
 // import { GhostCar } from "./pages/GhostCar";
 
 //create your first component

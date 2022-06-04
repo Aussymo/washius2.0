@@ -30,12 +30,12 @@ export const Login = () => {
             src="https://cdn.discordapp.com/attachments/617586904866619402/981352043421769728/Add_a_heading_2.png"
           />
           <br />
-          <a href="/" className="active">
+          <button href="/" className="active">
             Login
-          </a>
-          <a href="/signup" className="unactive">
+          </button>
+          <button href="/signup" className="unactive">
             Signup
-          </a>
+          </button>
         </div>
         <br />
         <br />

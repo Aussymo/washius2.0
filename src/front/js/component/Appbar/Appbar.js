@@ -7,6 +7,7 @@ import {
   NavDropdown,
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import "../Appbar/Appbar.css";
 
 export const Appbar = () => {
   return (
@@ -16,11 +17,9 @@ export const Appbar = () => {
           <Navbar key={expand} bg="primary" expand={expand} className="mb-3">
             <Container fluid>
               <Navbar.Brand href="/dashboard">
-                Washius
-                {/* <img
-                  className="logos"
-                  src="https://cdn.discordapp.com/attachments/617586904866619402/981352043421769728/Add_a_heading_2.png"
-                /> */}
+                <div className="washius">
+                  <img src="https://cdn.discordapp.com/attachments/617586904866619402/981352043421769728/Add_a_heading_2.png" />
+                </div>
               </Navbar.Brand>
               <Navbar.Toggle
                 aria-controls={`offcanvasNavbar-expand-${expand}`}
@@ -32,7 +31,7 @@ export const Appbar = () => {
               >
                 <Offcanvas.Header closeButton>
                   <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                    Washius
+                    <div className="title">Washius</div>
                   </Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
@@ -65,51 +64,39 @@ export const Appbar = () => {
                         Rainy Day
                       </NavDropdown.Item>
                     </NavDropdown> */}
-                    <Nav.Link>
-                      <Link to="/lists">List</Link>
-                    </Nav.Link>
-                    <Nav.Link href="#action7">Calendar PMs</Nav.Link>
-                    <Nav.Link href="#action8"></Nav.Link>
-                    <NavDropdown
-                      title="PMS"
-                      id={`offcanvasNavbarDropdown-expand-${expand}`}
-                    >
-                      <NavDropdown.Item href="#action9">
-                        Weekly
-                      </NavDropdown.Item>
-                      <NavDropdown.Item href="#action10">
-                        Monthly
-                      </NavDropdown.Item>
-                      <NavDropdown.Divider />
-                      <NavDropdown.Item href="#action11">
-                        Quarterly
-                      </NavDropdown.Item>
-                      <NavDropdown.Item href="#action12">
-                        Stock
-                      </NavDropdown.Item>
-                      <NavDropdown.Divider />
-                      <NavDropdown.Item href="#action13">
-                        Yearly
-                      </NavDropdown.Item>
-                    </NavDropdown>
-                    <NavDropdown
-                      title="Closing"
-                      id={`offcanvasNavbarDropdown-expand-${expand}`}
-                    >
-                      <NavDropdown.Item href="#action14">
-                        Turn System Off
-                      </NavDropdown.Item>
-                      <NavDropdown.Item href="#action15">
-                        Turn Equipment Off
-                      </NavDropdown.Item>
-                      <NavDropdown.Divider />
-                      <NavDropdown.Item href="#action16">
-                        Check Chemical Levels
-                      </NavDropdown.Item>
-                      <NavDropdown.Item href="#action17">
-                        Cleaning
-                      </NavDropdown.Item>
-                    </NavDropdown>
+                    <button className="button-56" role="button">
+                      <Nav.Link>
+                        <Link to="/lists">List</Link>
+                      </Nav.Link>
+                    </button>
+                    <br />
+                    <button className="button-56" role="button">
+                      <Nav.Link>Calendar PMs</Nav.Link>
+                    </button>
+                    <br />
+                    <button className="button-56" role="button">
+                      <Nav.Link>Scheduler</Nav.Link>
+                    </button>
+                    <br />
+
+                    <button className="button-56" role="button">
+                      <Nav.Link>Forms</Nav.Link>
+                    </button>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <button className="button-27" role="button">
+                      <Nav.Link>LogOut</Nav.Link>
+                    </button>
                   </Nav>
                 </Offcanvas.Body>
               </Navbar.Offcanvas>
