@@ -1,7 +1,7 @@
 import React, { useContext, useState, Component } from "react";
 import { Context } from "../store/appContext";
 import rigoImageUrl from "../../img/rigo-baby.jpg";
-import "../../styles/login.css";
+import "../../styles/signup.css";
 import { useHistory } from "react-router-dom";
 
 export const Signup = () => {
@@ -9,18 +9,21 @@ export const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
+  const [error, setError] = useState(null);
   const [phone_number, setPhoneNumber] = useState("");
   const history = useHistory("");
 
   const handleClick = (e) => {
     e.preventDefault();
     actions
-      .createUser(email, password, username, phone_number)
-      .then((data) => history.push("/"));
+      .createUser(email, password, username, phone_number, history)
+      .catch((error) => {
+        setError(error);
+      });
   };
   return (
     <div>
-      <form className="form">
+      <form onSubmit={handleClick} className="form">
         <div className="top">
           <img
             className="logo"
@@ -66,13 +69,15 @@ export const Signup = () => {
         </div>
         <br />
         <br />
+        {error && (
+          <div className="alert alert-danger">
+            <h6>{error.message}</h6>
+          </div>
+        )}
         <div className="submitdiv">
-          <input
-            href="/"
-            onClick={handleClick}
-            className="submitbtn"
-            placeholder="Sign up"
-          />
+          <button href="/" className="submitbtn" placeholder="Sign up">
+            Signup
+          </button>
         </div>
         <br />
         <br />

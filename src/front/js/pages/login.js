@@ -8,15 +8,18 @@ export const Login = () => {
   const { store, actions } = useContext(Context);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
   const history = useHistory("");
 
   const handleClick = (e) => {
-    actions.login(email, password).then((data) => history.push("/"));
     e.preventDefault();
+    actions.login(email, password, history).catch((error) => {
+      setError(error);
+    });
   };
   return (
     <div>
-      <form action="" className="form">
+      <form onSubmit={handleClick} className="form">
         {/* <img
           className="tesla"
           src="https://cdn.discordapp.com/attachments/617586904866619402/980209760295092325/IMG_2956.jpg"
@@ -61,15 +64,21 @@ export const Login = () => {
             Forgot Password?
           </a> */}
         </div>
+        {error && (
+          <div className="alert alert-danger">
+            <h6>{error.message}</h6>
+          </div>
+        )}
         <br />
         <br />
         <div className="submitdiv">
-          <input
-            onClick={handleClick}
-            href="/demo"
-            className="submitbtn"
+          <button
+            href="/app"
+            className="submitbtn glow-on-hover"
             placeholder="Login"
-          />
+          >
+            Login
+          </button>
         </div>
         <br />
         <br />
