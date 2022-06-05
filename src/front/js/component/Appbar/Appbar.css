@@ -99,10 +99,10 @@
   transform: translateY(0);
 }
 .washius img {
-  height: 100px;
-  width: 120px;
+  height: 120px;
+  width: 150px;
   font-size: 8em;
-  background-color: #18191f;
+  background-color: #fcfcfc;
   color: #fff;
   box-shadow: 2px 2px 2px #00000080, 10px 1px 12px #00000080,
     2px 2px 10px #00000080, 2px 2px 3px #00000080, inset 2px 2px 10px #00000080,
@@ -126,20 +126,21 @@
   background-color: #222222;
   background: repeating-linear-gradient(
     45deg,
-    #2b2b2b 0%,
-    #2b2b2b 10%,
-    #222222 0%,
-    #222222 50%
+    #286291 10%,
+    #fab919 0%,
+    #00c2cb 50%
   );
 }
 .offcanvas-header {
   text-align: center;
-  background-color: #222222;
+  /* background-color: #286291;
+  background: repeating-linear-gradient(45deg, #286291); */
+}
+.bg-primary {
   background: repeating-linear-gradient(
     45deg,
-    #2b2b2b 0%,
-    #2b2b2b 10%,
-    #222222 0%,
-    #222222 50%
+    #286291 10%,
+    #fab919 0%,
+    #00c2cb 50%
   );
 }
