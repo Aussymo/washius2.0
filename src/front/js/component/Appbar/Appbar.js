@@ -80,7 +80,9 @@ export const Appbar = () => {
                     <br />
 
                     <button className="button-56" role="button">
-                      <Nav.Link>Forms</Nav.Link>
+                      <Nav.Link>
+                        <Link to="/forms">Forms</Link>
+                      </Nav.Link>
                     </button>
                     <br />
                     <br />

@@ -6,6 +6,7 @@ import injectContext from "./store/appContext";
 import { Login } from "./pages/login";
 import { Signup } from "./pages/signup";
 import Lists from "./pages/Lists";
+import Forms from "./pages/Forms";
 import { Events } from "./pages/events";
 // import { Lists } from "./pages/lists";
 import { Appbar } from "./component/Appbar/Appbar";
@@ -39,6 +40,9 @@ const Layout = () => {
             </Route> */}
             <Route exact path="/lists">
               <Lists />
+            </Route>
+            <Route exact path="/forms">
+              <Forms />
             </Route>
             <Route>
               <h1>Not found!</h1>
