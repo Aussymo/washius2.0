@@ -71,7 +71,9 @@ export const Appbar = () => {
                     </button>
                     <br />
                     <button className="button-56" role="button">
-                      <Nav.Link>Calendar PMs</Nav.Link>
+                      <Nav.Link>
+                        <Link to="/events">Calendar PMs</Link>
+                      </Nav.Link>
                     </button>
                     <br />
                     <button className="button-56" role="button">
