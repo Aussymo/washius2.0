@@ -16,7 +16,7 @@ export const Appbar = () => {
         {[false].map((expand) => (
           <Navbar key={expand} bg="primary" expand={expand} className="mb-3">
             <Container fluid>
-              <Navbar.Brand href="/dashboard">
+              <Navbar.Brand href="/app">
                 <div className="washius">
                   <img src="https://cdn.discordapp.com/attachments/617586904866619402/981352043421769728/Add_a_heading_2.png" />
                 </div>
