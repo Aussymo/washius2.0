@@ -11,6 +11,7 @@ export const Events = () => {
     <div className="app">
       <h1 className="header">React Calendar</h1>
       <div>
+        <Appbar />
         <Calendar
           onChange={setDate}
           value={date}
