@@ -85,7 +85,9 @@ export const Appbar = () => {
                     </button>
                     <br />
                     <button className="button-56" role="button">
-                      <Nav.Link>Scheduler</Nav.Link>
+                      <Nav.Link>
+                        <Link to="scheduler">Scheduler</Link>
+                      </Nav.Link>
                     </button>
                     <br />
 
