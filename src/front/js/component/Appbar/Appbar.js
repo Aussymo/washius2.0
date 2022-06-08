@@ -6,10 +6,18 @@ import {
   Nav,
   NavDropdown,
 } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "../Appbar/Appbar.css";
 
 export const Appbar = () => {
+  const history = useHistory("");
+  const logout = () => {
+    sessionStorage.clear();
+    history.push("/");
+    console.log("logout");
+    location.reload();
+  };
   return (
     <div>
       <>
@@ -98,7 +106,11 @@ export const Appbar = () => {
                     <br />
                     <br />
                     <br />
-                    <button className="button-27" role="button">
+                    <button
+                      className="button-27"
+                      role="button"
+                      onClick={() => logout()}
+                    >
                       <Nav.Link>LogOut</Nav.Link>
                     </button>
                   </Nav>

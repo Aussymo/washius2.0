@@ -48,13 +48,31 @@ export const Events = () => {
 
   return (
     <div className="app">
-      <h2 className="calander-details">{calendarText}</h2>
-      <Calendar
-        onClickMonth={handleMonthChange}
-        onClickYear={handleYearChange}
-        onChange={handleDateChange}
-        value={selectedDate}
-      />
+      <h1 className="header">React Calendar</h1>
+      <div>
+        <Appbar />
+        <Calendar
+          onChange={setDate}
+          value={date}
+          onClickDay={() => setShowTime(true)}
+        />
+      </div>
+
+      {date.length > 0 ? (
+        <p>
+          <span>Start:</span>
+          {date[0].toDateString()}
+          &nbsp; &nbsp;
+          <span>End:</span>
+          {date[1].toDateString()}
+        </p>
+      ) : (
+        <p>
+          <span>Default selected date:</span>
+          {date.toDateString()}
+        </p>
+      )}
+      <Times showTime={showTime} date={date} />
     </div>
   );
 };

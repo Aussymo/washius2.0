@@ -10,15 +10,6 @@ class User(db.Model):
     phone_number = db.Column(db.String(80), unique=True, nullable=False)
     # is_active = db.Column(db.Boolean(), unique=False, nullable=False)
 
-# class Events(db.Model):
-#     Event_id = db.Column(db.Integer, primary_key=True)
-#     name = db.Column(db.String(120), unique=True, nullable=False)
-#     date = db.Column(db.String(80), unique=True, nullable=False)
-#     date_completed= db.Column(db.String(120), unique=False, nullable=False)
-#     company= db.Column(db.String(120), unique=False, nullable=False)
-    
-
-
     def __repr__(self):
         return f'<User {self.email}>'
         
@@ -30,4 +21,43 @@ class User(db.Model):
             "username": self.username,
             "phone_number": self.phone_number
             # do not serialize the password, its a security breach
+        }
+
+class Events(db.Model):
+    event_id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(120), unique=True, nullable=False)
+    date = db.Column(db.String(80), unique=True, nullable=False)
+    date_completed= db.Column(db.String(120), unique=False, nullable=False)
+    company= db.Column(db.String(120), unique=False, nullable=False)
+
+    def __repr__(self):
+        return f'<Events {self.name}>'
+
+    def serialize(self):
+        return{
+            "event_id" : self.event_id,
+            "name" : self.name,
+            "date" : self.date,
+            "date_completed" : self.date_completed,
+            "company" : self.company
+        }
+
+class Schedule(db.Model):
+    schedule_id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(80), unique=True, nullable=False)
+    day = db.Column(db.String(120), unique=True, nullable=False)
+    start_time = db.Column(db.String(120), unique=True, nullable=False)
+    end_time = db.Column(db.String(120), unique=True, nullable=False)
+
+
+    def __repr__(self):
+        return f'<Schedule {self.name}>'
+
+    def serialize(self):
+        return{
+            "schedule_id" : self.schedule_id,
+            "name" : self.name,
+            "day" : self.day,
+            "start_time" : self.start_time,
+            "end_time" : self.end_time
         }

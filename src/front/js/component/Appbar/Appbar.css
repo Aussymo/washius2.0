@@ -122,20 +122,7 @@
     0 0 40px #ffffff;
   font-size: 40px;
 }
-.offcanvas-body {
-  background-color: #222222;
-  background: repeating-linear-gradient(
-    45deg,
-    #286291 10%,
-    #fab919 0%,
-    #00c2cb 50%
-  );
-}
-.offcanvas-header {
-  text-align: center;
-  /* background-color: #286291;
-  background: repeating-linear-gradient(45deg, #286291); */
-}
+
 .bg-primary {
   background: repeating-linear-gradient(
     45deg,
