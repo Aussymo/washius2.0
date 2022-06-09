@@ -1,17 +1,22 @@
 import React, { useState } from "react";
 
-export const Opening = () => {
+export const Closing = () => {
   const checkList = [
-    "Turn System On",
-    "Turn Vacuums On",
-    "Turn Air Detailers On",
+    "Turn System Off",
+    "Turn Vacuums Off",
+    "Turn Air Detailers Off",
     "Check Chem Levels",
-    "Stock Rags",
-    "Stock Cleaners",
+    "Bring in Rags",
+    "Fill Up Cleaners",
     "Check Vacuum Quality",
-    "Sweep",
+    "Sweep Entire Lot",
+    "Empty All Trash",
+    "Clean Out Vacuum Cyclones",
     "Load Washer and Dryers",
-    "Move Cones",
+    "Pick Up Trash Inside Tunnel",
+    "Clean Tunnel Floor",
+    "Clean Tunnel Walls",
+    "Put Cones Out",
   ];
 
   const [checked, setChecked] = useState([]);
@@ -30,7 +35,7 @@ export const Opening = () => {
   return (
     <div className="checkList">
       <img
-        src="https://cdn-icons-png.flaticon.com/512/59/59802.png"
+        src="http://cdn.onlinewebfonts.com/svg/img_61536.png"
         alt="ghost-car"
       />
       <div className="title">Opening Procedure:</div>

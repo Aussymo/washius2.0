@@ -4,6 +4,8 @@ import * as React from "react";
 import { GhostCar } from "../component/List/GhostCar";
 import { Five } from "../component/List/Five";
 import { Appbar } from "../component/Appbar/Appbar";
+import { Opening } from "../component/List/Opening";
+import { Closing } from "../component/List/Closing";
 
 export default function Lists() {
   const items = ["Ghost Car", "Opening", "Shift Switch", "Closing", "5 A Day"];
@@ -89,6 +91,16 @@ export default function Lists() {
           {selectedTab === "5 A Day" ? (
             <div>
               <Five />
+            </div>
+          ) : null}
+          {selectedTab === "Opening" ? (
+            <div>
+              <Opening />
+            </div>
+          ) : null}
+          {selectedTab === "Closing" ? (
+            <div>
+              <Closing />
             </div>
           ) : null}
           {selectedTab === "account" ? <div>I </div> : null}
