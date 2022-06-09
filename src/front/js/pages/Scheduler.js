@@ -1,9 +1,17 @@
 import Table from "react-bootstrap/Table";
-import React from "react";
-
+import React, { useState, useEffect, useContext } from "react";
+import { Context } from "../store/appContext";
 import "../../styles/Scheduler.css";
 
 export const Scheduler = () => {
+  const { error, setError } = useState();
+  const { store, actions } = useContext(Context);
+  useEffect(() => {
+    actions.getAllUsers().catch((error) => {
+      setError(error);
+    });
+  }, []);
+
   return (
     <form className="form">
       <Table striped bordered hover variant="dark">
@@ -22,7 +30,7 @@ export const Scheduler = () => {
         <tbody>
           <tr>
             <td>
-              <input type="employee" placeholder="employee" />
+              <p>{store.full_name}</p>
             </td>
             <td>
               <input type="Time" placeholder="Time" />
