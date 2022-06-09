@@ -1,22 +1,18 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
-import "../../../styles/Opening.css";
+import "../../../styles/Switch.css";
 
-export const Opening = () => {
+export const Switch = () => {
   // State with list of all checked item
   const [checked, setChecked] = useState([]);
   const checkList = [
-    "Turn Computers on",
-    "Inspect Chemicals",
-    "Turn Compressors On",
-    "Turn Vacuums On",
+    "Get Report",
+    "Empty Trash Cans",
     "Stock Rags",
+    "Inspect Vacuum Quality",
+    "Walk Tunnel",
     "Stock Cleaners",
-    "Check Vacuum Quality",
-    "Inspect Air Detailers",
-    "Inspect Curb-Line for Trash",
     "Sweep Entire Lot",
-    "Move Cones",
   ];
 
   // Add/Remove checked item from list
@@ -42,9 +38,9 @@ export const Opening = () => {
     checked.includes(item) ? "checked-item" : "not-checked-item";
 
   return (
-    <div className="Opening">
+    <div className="Switch">
       <div className="checkList">
-        <div className="title">Opening Day:</div>
+        <div className="title">Shift Switch:</div>
         <div className="list-container">
           {checkList.map((item, index) => (
             <div key={index}>

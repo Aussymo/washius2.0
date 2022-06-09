@@ -2,6 +2,7 @@ import Table from "react-bootstrap/Table";
 import React, { useState, useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/Scheduler.css";
+import { Appbar } from "../component/Appbar/Appbar";
 
 export const Scheduler = () => {
   const { error, setError } = useState();
@@ -14,6 +15,7 @@ export const Scheduler = () => {
 
   return (
     <form className="form">
+      <Appbar />
       <Table striped bordered hover variant="dark">
         <thead className="body">
           <tr>

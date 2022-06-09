@@ -94,7 +94,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
       getAllUsers: async () => {
         try {
-          const resp = await fetch(process.env.BACKEND_URL + "/api/users");
+          const resp = await fetch(process.env.BACKEND_URL + "/api/user");
           const getUsers = await resp.json();
           setStore({ full_name: getUsers });
           console.log(getStore().full_name);

@@ -2,7 +2,10 @@
 import { TabPanel, useTabs } from "react-headless-tabs";
 import * as React from "react";
 import { GhostCar } from "../component/List/GhostCar";
+import { Opening } from "../component/List/Opening";
+import { Closing } from "../component/List/Closing";
 import { Five } from "../component/List/Five";
+import { Switch } from "../component/List/Switch";
 import { Appbar } from "../component/Appbar/Appbar";
 
 export default function Lists() {
@@ -91,9 +94,21 @@ export default function Lists() {
               <Five />
             </div>
           ) : null}
-          {selectedTab === "account" ? <div>I </div> : null}
-          {selectedTab === "account" ? <div>I </div> : null}
-          {selectedTab === "team" ? <div>I am </div> : null}
+          {selectedTab === "Opening" ? (
+            <div>
+              <Opening />
+            </div>
+          ) : null}
+          {selectedTab === "Shift Switch" ? (
+            <div>
+              <Switch />
+            </div>
+          ) : null}
+          {selectedTab === "Closing" ? (
+            <div>
+              <Closing />
+            </div>
+          ) : null}
         </div>
       </div>
     </div>

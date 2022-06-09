@@ -1,22 +1,22 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
-import "../../../styles/Opening.css";
+import "../../../styles/Closing.css";
 
-export const Opening = () => {
+export const Closing = () => {
   // State with list of all checked item
   const [checked, setChecked] = useState([]);
   const checkList = [
-    "Turn Computers on",
     "Inspect Chemicals",
-    "Turn Compressors On",
-    "Turn Vacuums On",
-    "Stock Rags",
-    "Stock Cleaners",
+    "Turn Compressors Off",
+    "Pull Rags",
+    "Pull/Refill Cleaners",
+    "Empty Trash Bins",
     "Check Vacuum Quality",
     "Inspect Air Detailers",
     "Inspect Curb-Line for Trash",
     "Sweep Entire Lot",
-    "Move Cones",
+    "Turn Vacuums Off",
+    "Turn Computers Off",
   ];
 
   // Add/Remove checked item from list
@@ -42,7 +42,7 @@ export const Opening = () => {
     checked.includes(item) ? "checked-item" : "not-checked-item";
 
   return (
-    <div className="Opening">
+    <div className="Closing">
       <div className="checkList">
         <div className="title">Opening Day:</div>
         <div className="list-container">
