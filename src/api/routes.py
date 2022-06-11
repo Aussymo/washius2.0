@@ -55,8 +55,8 @@ def create_user():
     
     return (jsonify(user.serialize())), 201
 
-@api.route('/users', methods=['GET'])
-def get_users():
+@api.route('/user', methods=['GET'])
+def get_user():
     users = User.query.all()
     all_users = list(map(lambda user: user.serialize(), users))
     

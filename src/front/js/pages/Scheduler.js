@@ -30,204 +30,43 @@ export const Scheduler = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>
-              <p>{store.full_name}</p>
-            </td>
-            <td>
-              <input type="Time" placeholder="Time" />
-              <input type="Time" placeholder="Time" />
-            </td>
-            <td>
-              <input type="Time" placeholder="Time" />
-              <input type="Time" placeholder="Time" />
-            </td>
-            <td>
-              <input type="Time" placeholder="Time" />
-              <input type="Time" placeholder="Time" />
-            </td>
-            <td>
-              <input type="Time" placeholder="Time" />
-              <input type="Time" placeholder="Time" />
-            </td>
-            <td>
-              <input type="Time" placeholder="Time" />
-              <input type="Time" placeholder="Time" />
-            </td>
-            <td>
-              <input type="Time" placeholder="Time" />
-              <input type="Time" placeholder="Time" />
-            </td>
-            <td>
-              <input type="Time" placeholder="Time" />
-              <input type="Time" placeholder="Time" />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input type="employee" placeholder="employee" />
-            </td>
-            <td>
-              <input type="Time" placeholder="Time" />
-              <input type="Time" placeholder="Time" />
-            </td>
-            <td>
-              <input type="Time" placeholder="Time" />
-              <input type="Time" placeholder="Time" />
-            </td>
-            <td>
-              <input type="Time" placeholder="Time" />
-              <input type="Time" placeholder="Time" />
-            </td>
-            <td>
-              <input type="Time" placeholder="Time" />
-              <input type="Time" placeholder="Time" />
-            </td>
-            <td>
-              <input type="Time" placeholder="Time" />
-              <input type="Time" placeholder="Time" />
-            </td>
-            <td>
-              <input type="Time" placeholder="Time" />
-              <input type="Time" placeholder="Time" />
-            </td>
-            <td>
-              <input type="Time" placeholder="Time" />
-              <input type="Time" placeholder="Time" />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input type="employee" placeholder="employee" />
-            </td>
-            <td>
-              <input type="Time" placeholder="Time" />
-              <input type="Time" placeholder="Time" />
-            </td>
-            <td>
-              <input type="Time" placeholder="Time" />
-              <input type="Time" placeholder="Time" />
-            </td>
-            <td>
-              <input type="Time" placeholder="Time" />
-              <input type="Time" placeholder="Time" />
-            </td>
-            <td>
-              <input type="Time" placeholder="Time" />
-              <input type="Time" placeholder="Time" />
-            </td>
-            <td>
-              <input type="Time" placeholder="Time" />
-              <input type="Time" placeholder="Time" />
-            </td>
-            <td>
-              <input type="Time" placeholder="Time" />
-              <input type="Time" placeholder="Time" />
-            </td>
-            <td>
-              <input type="Time" placeholder="Time" />
-              <input type="Time" placeholder="Time" />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input type="employee" placeholder="employee" />
-            </td>
-            <td>
-              <input type="Time" placeholder="Time" />
-              <input type="Time" placeholder="Time" />
-            </td>
-            <td>
-              <input type="Time" placeholder="Time" />
-              <input type="Time" placeholder="Time" />
-            </td>
-            <td>
-              <input type="Time" placeholder="Time" />
-              <input type="Time" placeholder="Time" />
-            </td>
-            <td>
-              <input type="Time" placeholder="Time" />
-              <input type="Time" placeholder="Time" />
-            </td>
-            <td>
-              <input type="Time" placeholder="Time" />
-              <input type="Time" placeholder="Time" />
-            </td>
-            <td>
-              <input type="Time" placeholder="Time" />
-              <input type="Time" placeholder="Time" />
-            </td>
-            <td>
-              <input type="Time" placeholder="Time" />
-              <input type="Time" placeholder="Time" />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input type="employee" placeholder="employee" />
-            </td>
-            <td>
-              <input type="Time" placeholder="Time" />
-              <input type="Time" placeholder="Time" />
-            </td>
-            <td>
-              <input type="Time" placeholder="Time" />
-              <input type="Time" placeholder="Time" />
-            </td>
-            <td>
-              <input type="Time" placeholder="Time" />
-              <input type="Time" placeholder="Time" />
-            </td>
-            <td>
-              <input type="Time" placeholder="Time" />
-              <input type="Time" placeholder="Time" />
-            </td>
-            <td>
-              <input type="Time" placeholder="Time" />
-              <input type="Time" placeholder="Time" />
-            </td>
-            <td>
-              <input type="Time" placeholder="Time" />
-              <input type="Time" placeholder="Time" />
-            </td>
-            <td>
-              <input type="Time" placeholder="Time" />
-              <input type="Time" placeholder="Time" />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input type="employee" placeholder="employee" />
-            </td>
-            <td>
-              <input type="Time" placeholder="Time" />
-              <input type="Time" placeholder="Time" />
-            </td>
-            <td>
-              <input type="Time" placeholder="Time" />
-              <input type="Time" placeholder="Time" />
-            </td>
-            <td>
-              <input type="Time" placeholder="Time" />
-              <input type="Time" placeholder="Time" />
-            </td>
-            <td>
-              <input type="Time" placeholder="Time" />
-              <input type="Time" placeholder="Time" />
-            </td>
-            <td>
-              <input type="Time" placeholder="Time" />
-              <input type="Time" placeholder="Time" />
-            </td>
-            <td>
-              <input type="Time" placeholder="Time" />
-              <input type="Time" placeholder="Time" />
-            </td>
-            <td>
-              <input type="Time" placeholder="Time" />
-              <input type="Time" placeholder="Time" />
-            </td>
-          </tr>
+          {store.allUser.map((u) => {
+            return (
+              <tr key={u.id}>
+                <td>
+                  <p>{u.full_name}</p>
+                </td>
+                <td>
+                  <input type="Time" placeholder="Time" />
+                  <input type="Time" placeholder="Time" />
+                </td>
+                <td>
+                  <input type="Time" placeholder="Time" />
+                  <input type="Time" placeholder="Time" />
+                </td>
+                <td>
+                  <input type="Time" placeholder="Time" />
+                  <input type="Time" placeholder="Time" />
+                </td>
+                <td>
+                  <input type="Time" placeholder="Time" />
+                  <input type="Time" placeholder="Time" />
+                </td>
+                <td>
+                  <input type="Time" placeholder="Time" />
+                  <input type="Time" placeholder="Time" />
+                </td>
+                <td>
+                  <input type="Time" placeholder="Time" />
+                  <input type="Time" placeholder="Time" />
+                </td>
+                <td>
+                  <input type="Time" placeholder="Time" />
+                  <input type="Time" placeholder="Time" />
+                </td>
+              </tr>
+            );
+          })}
         </tbody>
       </Table>
       <button type="button">Send</button>

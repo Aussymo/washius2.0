@@ -3,7 +3,7 @@ const getState = ({ getStore, getActions, setStore }) => {
     store: {
       user: sessionStorage.getItem("activeUser"),
       message: null,
-      full_name: [],
+      allUser: [],
     },
 
     actions: {
@@ -92,12 +92,12 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
       },
 
-      getAllUsers: async () => {
+      getAllUser: async () => {
         try {
           const resp = await fetch(process.env.BACKEND_URL + "/api/user");
-          const getUsers = await resp.json();
-          setStore({ full_name: getUsers });
-          console.log(getStore().full_name);
+          const allUser = await resp.json();
+          setStore({ allUser });
+          console.log(allUser);
         } catch (error) {
           throw Error("error on getuser");
         }
