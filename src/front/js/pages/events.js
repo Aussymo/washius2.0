@@ -48,6 +48,13 @@ export const Events = () => {
 
   return (
     <div className="app">
+      <h2 className="calander-details">{calendarText}</h2>
+      <Calendar
+        onClickMonth={handleMonthChange}
+        onClickYear={handleYearChange}
+        onChange={handleDateChange}
+        value={selectedDate}
+      />
       <h1 className="header">React Calendar</h1>
       <div>
         <Appbar />
