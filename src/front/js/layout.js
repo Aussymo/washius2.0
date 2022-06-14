@@ -5,6 +5,7 @@ import ScrollToTop from "./component/scrollToTop";
 import injectContext from "./store/appContext";
 
 import { Login } from "./pages/login";
+// import { OwnerLogin } from "./pages/operator";
 import { Scheduler } from "./pages/Scheduler";
 import { Signup } from "./pages/signup";
 import { Events } from "./pages/events";
