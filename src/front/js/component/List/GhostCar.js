@@ -5,7 +5,6 @@ import { Appbar } from "../Appbar/Appbar.js";
 import "../../../styles/GhostCar.css";
 
 export const GhostCar = () => {
-  const [endForm, setEndForm] = useState([]);
   return (
     <div>
       <ListGroup as="ol" numbered>
@@ -13,14 +12,7 @@ export const GhostCar = () => {
           Conveyor Starts
           <button className="Green"></button>
           <button className="Yellow"></button>
-          <button
-            className="Red"
-            onClick={() => console.log("red button triggered")}
-          ></button>
-          <div visible={false} id="conveyor">
-            //label //input //on click then turn div to visible //submit button
-            adds value to form array
-          </div>
+          <button className="Red"></button>
         </ListGroup.Item>
         <ListGroup.Item as="li">
           Roller Up<button className="Green"></button>
