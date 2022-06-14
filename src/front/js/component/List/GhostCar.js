@@ -5,158 +5,86 @@ import { Appbar } from "../Appbar/Appbar.js";
 import "../../../styles/GhostCar.css";
 
 export const GhostCar = () => {
-  const [endForm, setEndForm] = useState([]);
+  const myFunction = () => {
+    const element = document.getElementById(
+      "conveyor",
+      "Undercarriage",
+      "Pre soak",
+      "Back windshield spray",
+      "Scented spray",
+      "CTA’s",
+      "Fusion bath",
+      "Tire brushes",
+      "Side blasters",
+      "1st top brush",
+      "Wrap 1 set (DS/PS)",
+      "Fusion prime",
+      "2nd set of wraps",
+      "Bumper blast",
+      "More CTA’s",
+      "Grill brushes",
+      "Top Omni",
+      "Side omnis",
+      "Fusion wax",
+      "Ceramic shine",
+      "Top brush 2",
+      "Fusion rinse",
+      "Fusion seal",
+      "Rain repel",
+      "Clear coat protectant",
+      "Tireshine",
+      "Dryers",
+      "Mammoth ear"
+    );
+    const x = document.createElement("input");
+    element.appendChild(x);
+  };
+  const groupList = [
+    "conveyor start",
+    "Undercarriage",
+    "Pre soak",
+    "Back windshield spray",
+    "Scented spray",
+    "CTA’s",
+    "Fusion bath",
+    "Tire brushes",
+    "Side blasters",
+    "1st top brush",
+    "Wrap 1 set (DS/PS)",
+    "Fusion prime",
+    "2nd set of wraps",
+    "Bumper blast",
+    "More CTA’s",
+    "Grill brushes",
+    "Top Omni",
+    "Side omnis",
+    "Fusion wax",
+    "Ceramic shine",
+    "Top brush 2",
+    "Fusion rinse",
+    "Fusion seal",
+    "Rain repel",
+    "Clear coat protectant",
+    "Tireshine",
+    "Dryers",
+    "Mammoth ear",
+  ];
+
   return (
     <div>
       <ListGroup as="ol" numbered>
-        <ListGroup.Item as="li">
-          Conveyor Starts
-          <button className="Green"></button>
-          <button className="Yellow"></button>
-          <button
-            className="Red"
-            onClick={() => console.log("red button triggered")}
-          ></button>
-          <div visible={false} id="conveyor">
-            //label //input //on click then turn div to visible //submit button
-            adds value to form array
-          </div>
-        </ListGroup.Item>
-        <ListGroup.Item as="li">
-          Roller Up<button className="Green"></button>
-          <button className="Yellow"></button>
-          <button className="Red"></button>
-        </ListGroup.Item>
-        <ListGroup.Item as="li">
-          Pre Soak<button className="Green"></button>
-          <button className="Yellow"></button>
-          <button className="Red"></button>
-        </ListGroup.Item>
-        <ListGroup.Item as="li">
-          Back windshield Pre Soak<button className="Green"></button>
-          <button className="Yellow"></button>
-          <button className="Red"></button>
-        </ListGroup.Item>
-        <ListGroup.Item as="li">
-          Scented Spray<button className="Green"></button>
-          <button className="Yellow"></button>
-          <button className="Red"></button>
-        </ListGroup.Item>
-        <ListGroup.Item as="li">
-          CTA's<button className="Green"></button>
-          <button className="Yellow"></button>
-          <button className="Red"></button>
-        </ListGroup.Item>
-        <ListGroup.Item as="li">
-          Fusion Bath<button className="Green"></button>
-          <button className="Yellow"></button>
-          <button className="Red"></button>
-        </ListGroup.Item>
-        <ListGroup.Item as="li">
-          Tire Brushes<button className="Green"></button>
-          <button className="Yellow"></button>
-          <button className="Red"></button>
-        </ListGroup.Item>
-        <ListGroup.Item as="li">
-          Side Blasters<button className="Green"></button>
-          <button className="Yellow"></button>
-          <button className="Red"></button>
-        </ListGroup.Item>
-        <ListGroup.Item as="li">
-          1st Top Brush<button className="Green"></button>
-          <button className="Yellow"></button>
-          <button className="Red"></button>
-        </ListGroup.Item>
-        <ListGroup.Item as="li">
-          Wrap 1 "DS/PS"<button className="Green"></button>
-          <button className="Yellow"></button>
-          <button className="Red"></button>
-        </ListGroup.Item>
-        <ListGroup.Item as="li">
-          Fusion Prime<button className="Green"></button>
-          <button className="Yellow"></button>
-          <button className="Red"></button>
-        </ListGroup.Item>
-        <ListGroup.Item as="li">
-          Wraps 2<button className="Green"></button>
-          <button className="Yellow"></button>
-          <button className="Red"></button>
-        </ListGroup.Item>
-        <ListGroup.Item as="li">
-          Bumper Blaster<button className="Green"></button>
-          <button className="Yellow"></button>
-          <button className="Red"></button>
-        </ListGroup.Item>
-        <ListGroup.Item as="li">
-          2nd CTA's<button className="Green"></button>
-          <button className="Yellow"></button>
-          <button className="Red"></button>
-        </ListGroup.Item>
-        <ListGroup.Item as="li">
-          Grill Brushes<button className="Green"></button>
-          <button className="Yellow"></button>
-          <button className="Red"></button>
-        </ListGroup.Item>
-        <ListGroup.Item as="li">
-          Top Omni<button className="Green"></button>
-          <button className="Yellow"></button>
-          <button className="Red"></button>
-        </ListGroup.Item>
-        <ListGroup.Item as="li">
-          Side Omnis<button className="Green"></button>
-          <button className="Yellow"></button>
-          <button className="Red"></button>
-        </ListGroup.Item>
-        <ListGroup.Item as="li">
-          Fusion Wax<button className="Green"></button>
-          <button className="Yellow"></button>
-          <button className="Red"></button>
-        </ListGroup.Item>
-        <ListGroup.Item as="li">
-          Ceramic Shine<button className="Green"></button>
-          <button className="Yellow"></button>
-          <button className="Red"></button>
-        </ListGroup.Item>
-        <ListGroup.Item as="li">
-          Top Brush 2<button className="Green"></button>
-          <button className="Yellow"></button>
-          <button className="Red"></button>
-        </ListGroup.Item>
-        <ListGroup.Item as="li">
-          Fusion Rinse<button className="Green"></button>
-          <button className="Yellow"></button>
-          <button className="Red"></button>
-        </ListGroup.Item>
-        <ListGroup.Item as="li">
-          Fusion Seal<button className="Green"></button>
-          <button className="Yellow"></button>
-          <button className="Red"></button>
-        </ListGroup.Item>
-        <ListGroup.Item as="li">
-          Rain Repel<button className="Green"></button>
-          <button className="Yellow"></button>
-          <button className="Red"></button>
-        </ListGroup.Item>
-        <ListGroup.Item as="li">
-          Clear Coat<button className="Green"></button>
-          <button className="Yellow"></button>
-          <button className="Red"></button>
-        </ListGroup.Item>
-        <ListGroup.Item as="li">
-          Tireshine<button className="Green"></button>
-          <button className="Yellow"></button>
-          <button className="Red"></button>
-        </ListGroup.Item>
-        <ListGroup.Item as="li">
-          Dryers<button className="Green"></button>
-          <button className="Yellow"></button>
-          <button className="Red"></button>
-        </ListGroup.Item>
-        <ListGroup.Item as="li">
-          Mammoth Ears<button className="Green"></button>
-          <button className="Yellow"></button>
-          <button className="Red"></button>
-        </ListGroup.Item>
+        {groupList.map((item, i) => {
+          return (
+            <ListGroup.Item as="li" key={i}>
+              {item}
+              <div id="conveyor"></div>
+              <button className="Green"></button>
+              <button className="Yellow"></button>
+              <button className="Red" onClick={() => myFunction()}></button>
+            </ListGroup.Item>
+          );
+        })}
+        <button>submit</button>
       </ListGroup>
     </div>
   );
