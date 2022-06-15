@@ -7,6 +7,8 @@ import { Closing } from "../component/List/Closing";
 import { Five } from "../component/List/Five";
 import { Switch } from "../component/List/Switch";
 import { Appbar } from "../component/Appbar/Appbar";
+import { Opening } from "../component/List/Opening";
+import { Closing } from "../component/List/Closing";
 
 export default function Lists() {
   const items = ["Ghost Car", "Opening", "Shift Switch", "Closing", "5 A Day"];
@@ -99,16 +101,24 @@ export default function Lists() {
               <Opening />
             </div>
           ) : null}
+
+
           {selectedTab === "Shift Switch" ? (
             <div>
               <Switch />
             </div>
           ) : null}
+
           {selectedTab === "Closing" ? (
             <div>
               <Closing />
             </div>
           ) : null}
+
+          {selectedTab === "account" ? <div>I </div> : null}
+          {selectedTab === "account" ? <div>I </div> : null}
+          {selectedTab === "team" ? <div>I am </div> : null}
+
         </div>
       </div>
     </div>
