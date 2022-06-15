@@ -6,36 +6,37 @@ import "../../../styles/GhostCar.css";
 
 export const GhostCar = () => {
   const myFunction = () => {
-    const element = document.getElementById(
-      "conveyor",
-      "Undercarriage",
-      "Pre soak",
-      "Back windshield spray",
-      "Scented spray",
-      "CTA’s",
-      "Fusion bath",
-      "Tire brushes",
-      "Side blasters",
-      "1st top brush",
-      "Wrap 1 set (DS/PS)",
-      "Fusion prime",
-      "2nd set of wraps",
-      "Bumper blast",
-      "More CTA’s",
-      "Grill brushes",
-      "Top Omni",
-      "Side omnis",
-      "Fusion wax",
-      "Ceramic shine",
-      "Top brush 2",
-      "Fusion rinse",
-      "Fusion seal",
-      "Rain repel",
-      "Clear coat protectant",
-      "Tireshine",
-      "Dryers",
-      "Mammoth ear"
-    );
+    const element =
+      document.getElementById[
+        ("conveyor",
+        "Undercarriage",
+        "Pre soak",
+        "Back windshield spray",
+        "Scented spray",
+        "CTA’s",
+        "Fusion bath",
+        "Tire brushes",
+        "Side blasters",
+        "1st top brush",
+        "Wrap 1 set (DS/PS)",
+        "Fusion prime",
+        "2nd set of wraps",
+        "Bumper blast",
+        "More CTA’s",
+        "Grill brushes",
+        "Top Omni",
+        "Side omnis",
+        "Fusion wax",
+        "Ceramic shine",
+        "Top brush 2",
+        "Fusion rinse",
+        "Fusion seal",
+        "Rain repel",
+        "Clear coat protectant",
+        "Tireshine",
+        "Dryers",
+        "Mammoth ear")
+      ];
     const x = document.createElement("input");
     element.appendChild(x);
   };
@@ -80,7 +81,11 @@ export const GhostCar = () => {
               <div id="conveyor"></div>
               <button className="Green"></button>
               <button className="Yellow"></button>
-              <button className="Red" onClick={() => myFunction()}></button>
+              {myFunction.map((item, i) => {
+                <button className="Red" onClick={() => myFunction()}>
+                  {item}
+                </button>;
+              })}
             </ListGroup.Item>
           );
         })}
