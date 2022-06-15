@@ -1,23 +1,4 @@
 import React, { useState } from "react";
-
-
-export const Opening = () => {
-  const checkList = [
-    "Turn System On",
-    "Turn Vacuums On",
-    "Turn Air Detailers On",
-    "Check Chem Levels",
-    "Stock Rags",
-    "Stock Cleaners",
-    "Check Vacuum Quality",
-    "Sweep",
-    "Load Washer and Dryers",
-    "Move Cones",
-  ];
-
-  const [checked, setChecked] = useState([]);
-
-=======
 import ReactDOM from "react-dom";
 import "../../../styles/Opening.css";
 
@@ -38,7 +19,6 @@ export const Opening = () => {
     "Move Cones",
   ];
 
-
   // Add/Remove checked item from list
   const handleCheck = (event) => {
     var updatedList = [...checked];
@@ -49,23 +29,6 @@ export const Opening = () => {
     }
     setChecked(updatedList);
   };
-
-
-  return (
-    <div className="checkList">
-      <img
-        src="https://cdn-icons-png.flaticon.com/512/59/59802.png"
-        alt="ghost-car"
-      />
-      <div className="title">Opening Procedure:</div>
-      <div className="list-container">
-        {checkList.map((item, index) => (
-          <div key={index}>
-            <input value={item} type="checkbox" onChange={handleCheck} />
-            <span>{item}</span>
-          </div>
-        ))}
-      </div>
 
   // Generate string of checked items
   const checkedItems = checked.length
@@ -94,7 +57,6 @@ export const Opening = () => {
 
       <div>{`Items checked are: ${checkedItems}`}</div>
       <button>Send</button>
-
     </div>
   );
 };
