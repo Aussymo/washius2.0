@@ -46,17 +46,17 @@ def create_user():
     body = request.get_json()
     email = body["email"]
     password = body["password"]
-    username = body["username"]
+    full_name = body["full_name"]
     phone_number = body["phone_number"]
-    user = User(email=email, password=password, username=username, phone_number=phone_number)
+    user = User(email=email, password=password, full_name=full_name, phone_number=phone_number)
 
     db.session.add(user)
     db.session.commit()
     
     return (jsonify(user.serialize())), 201
 
-@api.route('/users', methods=['GET'])
-def get_users():
+@api.route('/user', methods=['GET'])
+def get_user():
     users = User.query.all()
     all_users = list(map(lambda user: user.serialize(), users))
     

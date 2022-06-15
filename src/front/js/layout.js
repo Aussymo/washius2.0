@@ -3,14 +3,15 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import injectContext from "./store/appContext";
+
 import { Login } from "./pages/login";
+// import { OwnerLogin } from "./pages/operator";
+import { Scheduler } from "./pages/Scheduler";
 import { Signup } from "./pages/signup";
+import { Events } from "./pages/events";
+import { Appbar } from "./component/Appbar/Appbar";
 import Lists from "./pages/Lists";
 import Forms from "./pages/Forms";
-import { Events } from "./pages/events";
-// import { Lists } from "./pages/lists";
-import { Appbar } from "./component/Appbar/Appbar";
-// import { GhostCar } from "./pages/GhostCar";
 
 //create your first component
 const Layout = () => {
@@ -35,9 +36,9 @@ const Layout = () => {
             <Route exact path="/events">
               <Events />
             </Route>
-            {/* <Route exact path="/ghostcar">
-              <GhostCar />
-            </Route> */}
+            <Route exact path="/scheduler">
+              <Scheduler />
+            </Route>
             <Route exact path="/lists">
               <Lists />
             </Route>

@@ -8,7 +8,7 @@ export const Signup = () => {
   const { store, actions } = useContext(Context);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [username, setUsername] = useState("");
+  const [full_name, setFullName] = useState("");
   const [error, setError] = useState(null);
   const [phone_number, setPhoneNumber] = useState("");
   const history = useHistory("");
@@ -16,7 +16,7 @@ export const Signup = () => {
   const handleClick = (e) => {
     e.preventDefault();
     actions
-      .createUser(email, password, username, phone_number, history)
+      .createUser(email, password, phone_number, full_name, history)
       .catch((error) => {
         setError(error);
       });
@@ -54,10 +54,10 @@ export const Signup = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
           <input
-            type="username"
-            placeholder="Username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            type="full_name"
+            placeholder="Full Name"
+            value={full_name}
+            onChange={(e) => setFullName(e.target.value)}
           />
           <input
             type="phone_number"

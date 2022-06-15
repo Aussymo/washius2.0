@@ -1,51 +1,96 @@
+import { Button } from "bootstrap";
 import React, { useState } from "react";
-// import { Appbar } from "../Appbar";
+import ListGroup from "react-bootstrap/ListGroup";
+import { Appbar } from "../Appbar/Appbar.js";
+import "../../../styles/GhostCar.css";
 
 export const GhostCar = () => {
-  const checkList = [
-    "Pre Soak",
-    "Tire Brush",
-    "Wrap Foam",
-    "Top Brush",
-    "Side Wraps",
-    "Grill Brushes",
-    "Top/Side Omni",
-    "Spot Free",
-    "Tire Shine",
-    "Dryers",
-  ];
-
-  const [checked, setChecked] = useState([]);
-
-  // Add/Remove checked item from list
-  const handleCheck = (event) => {
-    var updatedList = [...checked];
-    if (event.target.checked) {
-      updatedList = [...checked, event.target.value];
-    } else {
-      updatedList.splice(checked.indexOf(event.target.value), 1);
-    }
-    setChecked(updatedList);
+  const myFunction = () => {
+    const element =
+      document.getElementById[
+        ("conveyor",
+        "Undercarriage",
+        "Pre soak",
+        "Back windshield spray",
+        "Scented spray",
+        "CTA’s",
+        "Fusion bath",
+        "Tire brushes",
+        "Side blasters",
+        "1st top brush",
+        "Wrap 1 set (DS/PS)",
+        "Fusion prime",
+        "2nd set of wraps",
+        "Bumper blast",
+        "More CTA’s",
+        "Grill brushes",
+        "Top Omni",
+        "Side omnis",
+        "Fusion wax",
+        "Ceramic shine",
+        "Top brush 2",
+        "Fusion rinse",
+        "Fusion seal",
+        "Rain repel",
+        "Clear coat protectant",
+        "Tireshine",
+        "Dryers",
+        "Mammoth ear")
+      ];
+    const x = document.createElement("input");
+    element.appendChild(x);
   };
+  const groupList = [
+    "conveyor start",
+    "Undercarriage",
+    "Pre soak",
+    "Back windshield spray",
+    "Scented spray",
+    "CTA’s",
+    "Fusion bath",
+    "Tire brushes",
+    "Side blasters",
+    "1st top brush",
+    "Wrap 1 set (DS/PS)",
+    "Fusion prime",
+    "2nd set of wraps",
+    "Bumper blast",
+    "More CTA’s",
+    "Grill brushes",
+    "Top Omni",
+    "Side omnis",
+    "Fusion wax",
+    "Ceramic shine",
+    "Top brush 2",
+    "Fusion rinse",
+    "Fusion seal",
+    "Rain repel",
+    "Clear coat protectant",
+    "Tireshine",
+    "Dryers",
+    "Mammoth ear",
+  ];
 
   return (
     <div>
-      {/* <Appbar /> */}
-      <div className="checkList">
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/20/20973.png"
-          alt="ghost-car"
-        />
-        <div className="title">Ghost Car:</div>
-        <div className="list-container">
-          {checkList.map((item, index) => (
-            <div key={index}>
-              <input value={item} type="checkbox" onChange={handleCheck} />
-              <span>{item}</span>
-            </div>
-          ))}
-        </div>
-      </div>
+      <ListGroup as="ol" numbered>
+        {groupList.map((item, i) => {
+          return (
+            <ListGroup.Item as="li" key={i}>
+              {item}
+              <div id="conveyor"></div>
+              <button className="Green"></button>
+              <button className="Yellow"></button>
+              {myFunction.map((item, i) => {
+                <button className="Red" onClick={() => myFunction()}>
+                  {item}
+                </button>;
+              })}
+            </ListGroup.Item>
+          );
+        })}
+        <button>submit</button>
+      </ListGroup>
     </div>
   );
 };

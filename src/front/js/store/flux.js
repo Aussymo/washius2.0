@@ -3,7 +3,9 @@ const getState = ({ getStore, getActions, setStore }) => {
     store: {
       user: sessionStorage.getItem("activeUser"),
       message: null,
+      allUser: [],
     },
+
     actions: {
       // Use getActions to call a function within a fuction
 
@@ -66,7 +68,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
       },
 
-      createUser: async (email, password, phone_number, username, history) => {
+      createUser: async (email, password, phone_number, full_name, history) => {
         try {
           const opts = await fetch(process.env.BACKEND_URL + "/api/user", {
             method: "POST",
@@ -74,7 +76,7 @@ const getState = ({ getStore, getActions, setStore }) => {
               "Content-Type": "application/json",
               // "Access-Control-Allow-Origin": "*",
             },
-            body: JSON.stringify({ email, password, phone_number, username }),
+            body: JSON.stringify({ email, password, phone_number, full_name }),
           });
           if (opts.ok) {
             const token = await opts.json();
@@ -87,6 +89,17 @@ const getState = ({ getStore, getActions, setStore }) => {
           }
         } catch (error) {
           throw Error("Encountered Error on createuser");
+        }
+      },
+
+      getAllUser: async () => {
+        try {
+          const resp = await fetch(process.env.BACKEND_URL + "/api/user");
+          const allUser = await resp.json();
+          setStore({ allUser });
+          console.log(allUser);
+        } catch (error) {
+          throw Error("error on getuser");
         }
       },
 
