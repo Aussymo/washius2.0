@@ -1,6 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
+      schedule: sessionStorage.getItem("activeSchedule"),
       user: sessionStorage.getItem("activeUser"),
       message: null,
       allUser: [],
@@ -100,6 +101,50 @@ const getState = ({ getStore, getActions, setStore }) => {
           console.log(allUser);
         } catch (error) {
           throw Error("error on getuser");
+        }
+      },
+
+      createSchedule: async (full_name, day, start_time, end_time, history) => {
+        try {
+          const opts = await fetch(process.env.BACKEND_URL + "/api/schedule", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              // "Access-Control-Allow-Origin": "*",
+            },
+            body: JSON.stringify({ day, start_time, end_time, full_name }),
+          });
+          if (opts.ok) {
+            const token = await opts.json();
+            sessionStorage.setItem("token", JSON.stringify(token));
+            getActions().getSchedule(full_name);
+            history.push("/app");
+            return true;
+          } else {
+            throw "create user error";
+          }
+        } catch (error) {
+          throw Error("Encountered Error on createuser");
+        }
+      },
+
+      getSchedule: async (full_name) => {
+        try {
+          const resp = await fetch(
+            process.env.BACKEND_URL + "/api/schedule/active",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ full_name }),
+            }
+          );
+          const activeSchedule = await resp.json();
+          setStore({ schedule: activeSchedule });
+          sessionStorage.setItem("activeSchedule", activeSchedule);
+        } catch (error) {
+          throw Error("error on getSchedule");
         }
       },
 

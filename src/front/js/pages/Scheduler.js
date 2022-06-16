@@ -8,7 +8,7 @@ export const Scheduler = () => {
   const { error, setError } = useState();
   const { store, actions } = useContext(Context);
   useEffect(() => {
-    actions.getAllUsers().catch((error) => {
+    actions.getAllUser().catch((error) => {
       setError(error);
     });
   }, []);
@@ -69,7 +69,7 @@ export const Scheduler = () => {
           })}
         </tbody>
       </Table>
-      <button type="button">Send</button>
+      <button type="submit">Submit</button>
     </form>
   );
 };

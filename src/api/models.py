@@ -25,7 +25,7 @@ class User(db.Model):
 
 class Events(db.Model):
     event_id = db.Column(db.Integer, primary_key=True)
-    full_name = db.Column(db.String(120), unique=True, nullable=False)
+    name = db.Column(db.String(120), unique=True, nullable=False)
     date = db.Column(db.String(80), unique=True, nullable=False)
     date_completed= db.Column(db.String(120), unique=False, nullable=False)
     company= db.Column(db.String(120), unique=False, nullable=False)
@@ -36,7 +36,7 @@ class Events(db.Model):
     def serialize(self):
         return{
             "event_id" : self.event_id,
-            "full_name" : self.full_name,
+            "name" : self.name,
             "date" : self.date,
             "date_completed" : self.date_completed,
             "company" : self.company

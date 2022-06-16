@@ -6,40 +6,12 @@ import "../../../styles/GhostCar.css";
 
 export const GhostCar = () => {
   const myFunction = () => {
-    const element =
-      document.getElementById[
-        ("conveyor",
-        "Undercarriage",
-        "Pre soak",
-        "Back windshield spray",
-        "Scented spray",
-        "CTA’s",
-        "Fusion bath",
-        "Tire brushes",
-        "Side blasters",
-        "1st top brush",
-        "Wrap 1 set (DS/PS)",
-        "Fusion prime",
-        "2nd set of wraps",
-        "Bumper blast",
-        "More CTA’s",
-        "Grill brushes",
-        "Top Omni",
-        "Side omnis",
-        "Fusion wax",
-        "Ceramic shine",
-        "Top brush 2",
-        "Fusion rinse",
-        "Fusion seal",
-        "Rain repel",
-        "Clear coat protectant",
-        "Tireshine",
-        "Dryers",
-        "Mammoth ear")
-      ];
+    const element = document.getElementById("conveyor");
+
     const x = document.createElement("input");
     element.appendChild(x);
   };
+
   const groupList = [
     "conveyor start",
     "Undercarriage",
@@ -70,7 +42,12 @@ export const GhostCar = () => {
     "Dryers",
     "Mammoth ear",
   ];
-
+  const displayInput = (i) => {
+    document.getElementById(i).style.display = "block";
+  };
+  const hideInput = (i) => {
+    document.getElementById(i).style.display = "none";
+  };
   return (
     <div>
       <ListGroup as="ol" numbered>
@@ -78,14 +55,9 @@ export const GhostCar = () => {
           return (
             <ListGroup.Item as="li" key={i}>
               {item}
-              <div id="conveyor"></div>
-              <button className="Green"></button>
-              <button className="Yellow"></button>
-              {myFunction.map((item, i) => {
-                <button className="Red" onClick={() => myFunction()}>
-                  {item}
-                </button>;
-              })}
+              <input type="text" id={i} style={{ display: "none" }} />
+              <button className="Green" onClick={() => hideInput(i)}></button>
+              <button className="Red" onClick={() => displayInput(i)}></button>
             </ListGroup.Item>
           );
         })}

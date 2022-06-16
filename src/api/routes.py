@@ -61,3 +61,15 @@ def get_user():
     all_users = list(map(lambda user: user.serialize(), users))
     
     return jsonify(all_users), 200
+
+@api.route("/schedule", methods=["POST"])
+def create_schedule():
+    body = request.get_json()
+    full_name = body["full_name"]
+    day = body["day"]
+    start_time = body["start_time"]
+    end_time = body["end_time"]
+    schedule = Schedule(full_name=full_name, day=day, start_time=start_time, endtime=end_time)
+
+    db.session.add(schedule)
+    db.session.commit()

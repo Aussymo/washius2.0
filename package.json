@@ -73,6 +73,7 @@
 		]
 	},
 	"dependencies": {
+		"@syncfusion/ej2-react-calendars": "^20.1.58",
 		"bootstrap": "^5.2.0-beta1",
 		"prop-types": "^15.6.1",
 		"react": "^16.8.4",
