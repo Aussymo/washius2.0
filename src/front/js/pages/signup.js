@@ -75,7 +75,11 @@ export const Signup = () => {
           </div>
         )}
         <div className="submitdiv">
-          <button href="/" className="submitbtn" placeholder="Sign up">
+          <button
+            href="/"
+            className="submitbtn glow-on-hover"
+            placeholder="Sign up"
+          >
             Signup
           </button>
         </div>
