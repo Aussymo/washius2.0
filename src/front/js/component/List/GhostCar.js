@@ -4,6 +4,8 @@ import ListGroup from "react-bootstrap/ListGroup";
 import { Appbar } from "../Appbar/Appbar.js";
 import "../../../styles/GhostCar.css";
 
+/// Need to figure out how to do e.target for map function
+
 export const GhostCar = () => {
   const myFunction = () => {
     const element = document.getElementById("conveyor");

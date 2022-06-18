@@ -12,6 +12,7 @@ import { Signup } from "./pages/signup";
 import { Appbar } from "./component/Appbar/Appbar";
 import Lists from "./pages/Lists";
 import Forms from "./pages/Forms";
+import Events from "./pages/Events";
 
 //create your first component
 const Layout = () => {
@@ -32,6 +33,9 @@ const Layout = () => {
             </Route>
             <Route exact path="/app">
               <Appbar />
+            </Route>
+            <Route exact path="/events">
+              <Events />
             </Route>
 
             <Route exact path="/scheduler">

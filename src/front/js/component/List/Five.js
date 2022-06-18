@@ -1,10 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import "../../../styles/Five.css";
-//include images into your bundle
-// import rigoImage from "../../img/rigo-baby.jpg";
 
-//create your first component
+/// havent even began editing this
 
 export function Five() {
   const [todos, setTodos] = useState([
