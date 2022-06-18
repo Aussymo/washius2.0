@@ -104,7 +104,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
       },
 
-      createSchedule: async (full_name, day, start_time, end_time, history) => {
+      schedule: async (full_name, day, start_time, end_time, history) => {
         try {
           const opts = await fetch(process.env.BACKEND_URL + "/api/schedule", {
             method: "POST",
@@ -115,13 +115,11 @@ const getState = ({ getStore, getActions, setStore }) => {
             body: JSON.stringify({ day, start_time, end_time, full_name }),
           });
           if (opts.ok) {
-            const token = await opts.json();
-            sessionStorage.setItem("token", JSON.stringify(token));
             getActions().getSchedule(full_name);
-            history.push("/app");
+            history.push("/scheduler");
             return true;
           } else {
-            throw "create user error";
+            throw "create schedule error";
           }
         } catch (error) {
           throw Error("Encountered Error on createuser");

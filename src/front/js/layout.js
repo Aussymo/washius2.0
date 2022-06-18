@@ -8,7 +8,6 @@ import { Login } from "./pages/login";
 // import { OwnerLogin } from "./pages/operator";
 import { Scheduler } from "./pages/Scheduler";
 import { Signup } from "./pages/signup";
-import { Events } from "./pages/events";
 import { Appbar } from "./component/Appbar/Appbar";
 import Lists from "./pages/Lists";
 import Forms from "./pages/Forms";
@@ -33,9 +32,7 @@ const Layout = () => {
             <Route exact path="/app">
               <Appbar />
             </Route>
-            <Route exact path="/events">
-              <Events />
-            </Route>
+
             <Route exact path="/scheduler">
               <Scheduler />
             </Route>

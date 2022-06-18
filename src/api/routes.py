@@ -73,3 +73,5 @@ def create_schedule():
 
     db.session.add(schedule)
     db.session.commit()
+
+    return jsonify(schedule), 200
