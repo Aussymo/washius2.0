@@ -13,7 +13,7 @@ export const GhostCar = () => {
   };
 
   const groupList = [
-    "conveyor start",
+    "Conveyor start",
     "Undercarriage",
     "Pre soak",
     "Back windshield spray",
@@ -61,7 +61,9 @@ export const GhostCar = () => {
             </ListGroup.Item>
           );
         })}
-        <button>submit</button>
+        <div className="submitdiv">
+          <button className="submitbtn glow-on-hover">Submit</button>
+        </div>
       </ListGroup>
     </div>
   );
