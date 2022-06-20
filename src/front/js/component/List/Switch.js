@@ -52,7 +52,7 @@ export const Switch = () => {
       </div>
 
       <div>{`Items checked are: ${checkedItems}`}</div>
-      <button>Send</button>
+      <button className="submitbtn glow-on-hover">Send</button>
     </div>
   );
 };
