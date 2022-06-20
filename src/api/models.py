@@ -65,6 +65,13 @@ class Schedule(db.Model):
             "schedule_id" : self.schedule_id,
             "full_name" : self.full_name,
             "day" : self.day,
+            "sunday" : self.sunday,
+            "monday" : self.monday,
+            "tuesday" : self.tuesday,
+            "wednesday" : self.wednesday,
+            "thursday" : self.thursday,
+            "friday" : self.friday,
+            "saturday" : self.saturday,
             "start_time" : self.start_time,
             "end_time" : self.end_time
         }
