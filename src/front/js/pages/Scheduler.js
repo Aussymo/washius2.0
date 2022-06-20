@@ -10,6 +10,13 @@ export const Scheduler = () => {
   const { store, actions } = useContext(Context);
   const [full_name, setFull_name] = useState("");
   const [day, setDay] = useState("");
+  const [sunday, setSunday] = useState("");
+  const [monday, setMonday] = useState("");
+  const [tuesday, setTuesday] = useState("");
+  const [wednesday, setWednesday] = useState("");
+  const [thursday, setThursday] = useState("");
+  const [friday, setFriday] = useState("");
+  const [saturday, setSaturday] = useState("");
   const [start_time, setStart_time] = useState("");
   const [end_time, setEnd_time] = useState("");
   const history = useHistory("");
@@ -38,25 +45,28 @@ export const Scheduler = () => {
             <th value={day} onChange={(e) => setDay(e.target.value)}>
               Employee
             </th>
-            <th value={day} onChange={(e) => setDay(e.target.value)}>
+            <th value={sunday} onChange={(e) => setSunday(e.target.value)}>
               Sunday
             </th>
-            <th value={day} onChange={(e) => setDay(e.target.value)}>
+            <th value={monday} onChange={(e) => setMonday(e.target.value)}>
               Monday
             </th>
-            <th value={day} onChange={(e) => setDay(e.target.value)}>
+            <th value={tuesday} onChange={(e) => setTuesday(e.target.value)}>
               Tuesday
             </th>
-            <th value={day} onChange={(e) => setDay(e.target.value)}>
+            <th
+              value={wednesday}
+              onChange={(e) => setWednesday(e.target.value)}
+            >
               Wednesday
             </th>
-            <th value={day} onChange={(e) => setDay(e.target.value)}>
+            <th value={thursday} onChange={(e) => setThursday(e.target.value)}>
               Thursday
             </th>
-            <th value={day} onChange={(e) => setDay(e.target.value)}>
+            <th value={friday} onChange={(e) => setFriday(e.target.value)}>
               Friday
             </th>
-            <th value={day} onChange={(e) => setDay(e.target.value)}>
+            <th value={saturday} onChange={(e) => setSaturday(e.target.value)}>
               Saturday
             </th>
           </tr>
