@@ -91,7 +91,7 @@ export const Scheduler = () => {
                   <input
                     type="Time"
                     placeholder="Time"
-                    value
+                    value={start_time}
                     onChange={(e) => setStart_time(e.target.value)}
                   />
                   <input
