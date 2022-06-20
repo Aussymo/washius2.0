@@ -45,6 +45,7 @@ class Events(db.Model):
 class Schedule(db.Model):
     schedule_id = db.Column(db.Integer, primary_key=True)
     full_name = db.Column(db.String(80), unique=True, nullable=False)
+    day = db.Column(db.String(120), unique=True, nullable=False)
     monday = db.Column(db.String(120), unique=True, nullable=False)
     tuesday = db.Column(db.String(120), unique=True, nullable=False)
     wednesday = db.Column(db.String(120), unique=True, nullable=False)
