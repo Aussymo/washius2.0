@@ -29,6 +29,14 @@ export const Closing = () => {
     }
     setChecked(updatedList);
   };
+  const checkedItems = checked.length
+    ? checked.reduce((total, item) => {
+        return total + ", " + item;
+      })
+    : "";
+
+  var isChecked = (item) =>
+    checked.includes(item) ? "checked-item" : "not-checked-item";
 
   return (
     <div className="Closing">
