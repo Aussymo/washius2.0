@@ -9,22 +9,43 @@ export const Scheduler = () => {
   const { error, setError } = useState();
   const { store, actions } = useContext(Context);
   const [full_name, setFull_name] = useState("");
-  const [day, setDay] = useState("");
-  const [sunday, setSunday] = useState("");
-  const [monday, setMonday] = useState("");
-  const [tuesday, setTuesday] = useState("");
-  const [wednesday, setWednesday] = useState("");
-  const [thursday, setThursday] = useState("");
-  const [friday, setFriday] = useState("");
-  const [saturday, setSaturday] = useState("");
-  const [start_time, setStart_time] = useState("");
-  const [end_time, setEnd_time] = useState("");
+  const [sunday_start, setSunday_start] = useState();
+  const [monday_start, setMonday_start] = useState();
+  const [tuesday_start, setTuesday_start] = useState();
+  const [wednesday_start, setWednesday_start] = useState();
+  const [thursday_start, setThursday_start] = useState();
+  const [friday_start, setFriday_start] = useState();
+  const [saturday_start, setSaturday_start] = useState();
+  const [sunday_end, setSunday_end] = useState();
+  const [monday_end, setMonday_end] = useState();
+  const [tuesday_end, setTuesday_end] = useState();
+  const [wednesday_end, setWednesday_end] = useState();
+  const [thursday_end, setThursday_end] = useState();
+  const [friday_end, setFriday_end] = useState();
+  const [saturday_end, setSaturday_end] = useState();
   const history = useHistory("");
 
   const handleClick = (e) => {
     e.preventDefault();
     actions
-      .schedule(full_name, day, start_time, end_time, history)
+      .schedule(
+        full_name,
+        sunday_start,
+        sunday_end,
+        monday_start,
+        monday_end,
+        tuesday_start,
+        tuesday_end,
+        wednesday_start,
+        wednesday_end,
+        thursday_start,
+        thursday_end,
+        friday_start,
+        friday_end,
+        saturday_start,
+        saturday_end,
+        history
+      )
       .catch((error) => {
         setError(error);
       });
@@ -42,33 +63,14 @@ export const Scheduler = () => {
       <Table striped bordered hover variant="dark">
         <thead className="body">
           <tr>
-            <th value={day} onChange={(e) => setDay(e.target.value)}>
-              Employee
-            </th>
-            <th value={sunday} onChange={(e) => setSunday(e.target.value)}>
-              Sunday
-            </th>
-            <th value={monday} onChange={(e) => setMonday(e.target.value)}>
-              Monday
-            </th>
-            <th value={tuesday} onChange={(e) => setTuesday(e.target.value)}>
-              Tuesday
-            </th>
-            <th
-              value={wednesday}
-              onChange={(e) => setWednesday(e.target.value)}
-            >
-              Wednesday
-            </th>
-            <th value={thursday} onChange={(e) => setThursday(e.target.value)}>
-              Thursday
-            </th>
-            <th value={friday} onChange={(e) => setFriday(e.target.value)}>
-              Friday
-            </th>
-            <th value={saturday} onChange={(e) => setSaturday(e.target.value)}>
-              Saturday
-            </th>
+            <th>Employee</th>
+            <th>Sunday</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+            <th>Saturday</th>
           </tr>
         </thead>
         <tbody>
@@ -87,98 +89,98 @@ export const Scheduler = () => {
                   <input
                     type="Time"
                     placeholder="Time"
-                    value={start_time}
-                    onChange={(e) => setStart_time(e.target.value)}
+                    value={sunday_start}
+                    onChange={(e) => setSunday_start(e.target.value)}
                   />
                   <input
                     type="Time"
                     placeholder="Time"
-                    value={end_time}
-                    onChange={(e) => setEnd_time(e.target.value)}
-                  />
-                </td>
-                <td>
-                  <input
-                    type="Time"
-                    placeholder="Time"
-                    value={start_time}
-                    onChange={(e) => setStart_time(e.target.value)}
-                  />
-                  <input
-                    type="Time"
-                    placeholder="Time"
-                    value={end_time}
-                    onChange={(e) => setEnd_time(e.target.value)}
+                    value={sunday_end}
+                    onChange={(e) => setSunday_end(e.target.value)}
                   />
                 </td>
                 <td>
                   <input
                     type="Time"
                     placeholder="Time"
-                    value={start_time}
-                    onChange={(e) => setStart_time(e.target.value)}
+                    value={monday_start}
+                    onChange={(e) => setMonday_start(e.target.value)}
                   />
                   <input
                     type="Time"
                     placeholder="Time"
-                    value={end_time}
-                    onChange={(e) => setEnd_time(e.target.value)}
-                  />
-                </td>
-                <td>
-                  <input
-                    type="Time"
-                    placeholder="Time"
-                    value={start_time}
-                    onChange={(e) => setStart_time(e.target.value)}
-                  />
-                  <input
-                    type="Time"
-                    placeholder="Time"
-                    value={end_time}
-                    onChange={(e) => setEnd_time(e.target.value)}
+                    value={monday_end}
+                    onChange={(e) => setMonday_end(e.target.value)}
                   />
                 </td>
                 <td>
                   <input
                     type="Time"
                     placeholder="Time"
-                    value={start_time}
-                    onChange={(e) => setStart_time(e.target.value)}
+                    value={tuesday_start}
+                    onChange={(e) => setTuesday_start(e.target.value)}
                   />
                   <input
                     type="Time"
                     placeholder="Time"
-                    value={end_time}
-                    onChange={(e) => setEnd_time(e.target.value)}
-                  />
-                </td>
-                <td>
-                  <input
-                    type="Time"
-                    placeholder="Time"
-                    value={start_time}
-                    onChange={(e) => setStart_time(e.target.value)}
-                  />
-                  <input
-                    type="Time"
-                    placeholder="Time"
-                    value={end_time}
-                    onChange={(e) => setEnd_time(e.target.value)}
+                    value={tuesday_end}
+                    onChange={(e) => setTuesday_end(e.target.value)}
                   />
                 </td>
                 <td>
                   <input
                     type="Time"
                     placeholder="Time"
-                    value={start_time}
-                    onChange={(e) => setStart_time(e.target.value)}
+                    value={wednesday_start}
+                    onChange={(e) => setWednesday_start(e.target.value)}
                   />
                   <input
                     type="Time"
                     placeholder="Time"
-                    value={end_time}
-                    onChange={(e) => setEnd_time(e.target.value)}
+                    value={wednesday_end}
+                    onChange={(e) => setWednesday_end(e.target.value)}
+                  />
+                </td>
+                <td>
+                  <input
+                    type="Time"
+                    placeholder="Time"
+                    value={thursday_start}
+                    onChange={(e) => setThursday_start(e.target.value)}
+                  />
+                  <input
+                    type="Time"
+                    placeholder="Time"
+                    value={thursday_end}
+                    onChange={(e) => setThursday_end(e.target.value)}
+                  />
+                </td>
+                <td>
+                  <input
+                    type="Time"
+                    placeholder="Time"
+                    value={friday_start}
+                    onChange={(e) => setFriday_start(e.target.value)}
+                  />
+                  <input
+                    type="Time"
+                    placeholder="Time"
+                    value={friday_end}
+                    onChange={(e) => setFriday_end(e.target.value)}
+                  />
+                </td>
+                <td>
+                  <input
+                    type="Time"
+                    placeholder="Time"
+                    value={saturday_start}
+                    onChange={(e) => setSaturday_start(e.target.value)}
+                  />
+                  <input
+                    type="Time"
+                    placeholder="Time"
+                    value={saturday_end}
+                    onChange={(e) => setSaturday_end(e.target.value)}
                   />
                 </td>
               </tr>
@@ -186,6 +188,7 @@ export const Scheduler = () => {
           })}
         </tbody>
       </Table>
+
       <button href="/schedler" className="submitbtn glow-on-hover">
         Submit
       </button>

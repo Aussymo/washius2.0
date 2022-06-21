@@ -13,16 +13,12 @@ export const Login = () => {
   const handleClick = (e) => {
     e.preventDefault();
     actions.login(email, password, history).catch((error) => {
-      setError(error);
+      SpeechSynthesisErrorEvent(error);
     });
   };
   return (
     <div>
       <form onSubmit={handleClick} className="form">
-        {/* <img
-          className="tesla"
-          src="https://cdn.discordapp.com/attachments/617586904866619402/980209760295092325/IMG_2956.jpg"
-        /> */}
         <div className="top">
           <img
             className="logo"

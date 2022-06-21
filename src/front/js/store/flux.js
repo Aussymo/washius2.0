@@ -104,32 +104,65 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
       },
 
-      schedule: async (full_name, day, start_time, end_time, history) => {
+      schedule: async (
+        full_name,
+        sunday_start,
+        sunday_end,
+        monday_start,
+        monday_end,
+        tuesday_start,
+        tuesday_end,
+        wednesday_start,
+        wednesday_end,
+        thursday_start,
+        thursday_end,
+        friday_start,
+        friday_end,
+        saturday_start,
+        saturday_end,
+        history
+      ) => {
         try {
-          const opts = await fetch(process.env.BACKEND_URL + "/api/schedule", {
+          const opts = await fetch(process.env.BACKEND_URL + "/api/scheduler", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
               // "Access-Control-Allow-Origin": "*",
             },
-            body: JSON.stringify({ day, start_time, end_time, full_name }),
+            body: JSON.stringify({
+              sunday_start,
+              sunday_end,
+              monday_start,
+              monday_end,
+              tuesday_start,
+              tuesday_end,
+              wednesday_start,
+              wednesday_end,
+              thursday_start,
+              thursday_end,
+              friday_start,
+              friday_end,
+              saturday_start,
+              saturday_end,
+              full_name,
+            }),
           });
           if (opts.ok) {
-            getActions().getSchedule(full_name);
+            getActions().getScheduler(full_name);
             history.push("/scheduler");
             return true;
           } else {
             throw "create schedule error";
           }
         } catch (error) {
-          throw Error("Encountered Error on createuser");
+          throw Error("Encountered Error on creat schedule");
         }
       },
 
       getSchedule: async (full_name) => {
         try {
           const resp = await fetch(
-            process.env.BACKEND_URL + "/api/schedule/active",
+            process.env.BACKEND_URL + "/api/scheduler/active",
             {
               method: "POST",
               headers: {
