@@ -6,8 +6,8 @@ import { Appbar } from "../component/Appbar/Appbar";
 import { useHistory } from "react-router-dom";
 
 export const Scheduler = () => {
-  const { error, setError } = useState();
   const { store, actions } = useContext(Context);
+  const [error, setError] = useState(null);
   const [full_name, setFull_name] = useState("");
   const [sunday_start, setSunday_start] = useState();
   const [monday_start, setMonday_start] = useState();
@@ -57,6 +57,26 @@ export const Scheduler = () => {
     });
   }, []);
 
+  const myFunction = (e, index) => {
+    const uniqueUser = store.allUser;
+    if (uniqueUser[index]) {
+      setSunday_start(e.target.value);
+      setSunday_end(e.target.value);
+      setMonday_start(e.target.value);
+      setMonday_end(e.target.value);
+      setTuesday_start(e.target.value);
+      setTuesday_end(e.target.value);
+      setWednesday_start(e.target.value);
+      setWednesday_end(e.target.value);
+      setThursday_start(e.target.value);
+      setThursday_end(e.target.value);
+      setFriday_start(e.target.value);
+      setFriday_end(e.target.value);
+      setSaturday_start(e.target.value);
+      setSaturday_end(e.target.value);
+    }
+  };
+
   return (
     <form onSubmit={handleClick} className="form">
       <Appbar />
@@ -90,13 +110,13 @@ export const Scheduler = () => {
                     type="Time"
                     placeholder="Time"
                     value={sunday_start}
-                    onChange={(e) => setSunday_start(e.target.value)}
+                    onChange={myFunction(u.id)}
                   />
                   <input
                     type="Time"
                     placeholder="Time"
                     value={sunday_end}
-                    onChange={(e) => setSunday_end(e.target.value)}
+                    onChange={myFunction(u.id)}
                   />
                 </td>
                 <td>
@@ -104,13 +124,13 @@ export const Scheduler = () => {
                     type="Time"
                     placeholder="Time"
                     value={monday_start}
-                    onChange={(e) => setMonday_start(e.target.value)}
+                    onChange={myFunction(u.id)}
                   />
                   <input
                     type="Time"
                     placeholder="Time"
                     value={monday_end}
-                    onChange={(e) => setMonday_end(e.target.value)}
+                    onChange={myFunction(u.id)}
                   />
                 </td>
                 <td>
@@ -118,13 +138,13 @@ export const Scheduler = () => {
                     type="Time"
                     placeholder="Time"
                     value={tuesday_start}
-                    onChange={(e) => setTuesday_start(e.target.value)}
+                    onChange={myFunction(u.id)}
                   />
                   <input
                     type="Time"
                     placeholder="Time"
                     value={tuesday_end}
-                    onChange={(e) => setTuesday_end(e.target.value)}
+                    onChange={myFunction(u.id)}
                   />
                 </td>
                 <td>
@@ -132,13 +152,13 @@ export const Scheduler = () => {
                     type="Time"
                     placeholder="Time"
                     value={wednesday_start}
-                    onChange={(e) => setWednesday_start(e.target.value)}
+                    onChange={myFunction(u.id)}
                   />
                   <input
                     type="Time"
                     placeholder="Time"
                     value={wednesday_end}
-                    onChange={(e) => setWednesday_end(e.target.value)}
+                    onChange={myFunction(u.id)}
                   />
                 </td>
                 <td>
@@ -146,13 +166,13 @@ export const Scheduler = () => {
                     type="Time"
                     placeholder="Time"
                     value={thursday_start}
-                    onChange={(e) => setThursday_start(e.target.value)}
+                    onChange={myFunction(u.id)}
                   />
                   <input
                     type="Time"
                     placeholder="Time"
                     value={thursday_end}
-                    onChange={(e) => setThursday_end(e.target.value)}
+                    onChange={myFunction(u.id)}
                   />
                 </td>
                 <td>
@@ -160,13 +180,13 @@ export const Scheduler = () => {
                     type="Time"
                     placeholder="Time"
                     value={friday_start}
-                    onChange={(e) => setFriday_start(e.target.value)}
+                    onChange={myFunction(u.id)}
                   />
                   <input
                     type="Time"
                     placeholder="Time"
                     value={friday_end}
-                    onChange={(e) => setFriday_end(e.target.value)}
+                    onChange={myFunction(u.id)}
                   />
                 </td>
                 <td>
@@ -174,24 +194,25 @@ export const Scheduler = () => {
                     type="Time"
                     placeholder="Time"
                     value={saturday_start}
-                    onChange={(e) => setSaturday_start(e.target.value)}
+                    onChange={myFunction(u.id)}
                   />
                   <input
                     type="Time"
                     placeholder="Time"
                     value={saturday_end}
-                    onChange={(e) => setSaturday_end(e.target.value)}
+                    onChange={myFunction(u.id)}
                   />
+                </td>
+                <td>
+                  <button href="/schedler" className="submitbtn glow-on-hover">
+                    Submit
+                  </button>
                 </td>
               </tr>
             );
           })}
         </tbody>
       </Table>
-
-      <button href="/schedler" className="submitbtn glow-on-hover">
-        Submit
-      </button>
     </form>
   );
 };
