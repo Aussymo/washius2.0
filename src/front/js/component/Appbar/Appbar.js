@@ -6,6 +6,7 @@ import {
   Nav,
   NavDropdown,
 } from "react-bootstrap";
+import { Weather } from "../Weather/app.js";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "../Appbar/Appbar.css";
@@ -44,34 +45,6 @@ export const Appbar = () => {
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                   <Nav className="justify-content-end flex-grow-1 pe-3">
-                    {/* <NavDropdown
-                      title="Lists"
-                      id={`offcanvasNavbarDropdown-expand-${expand}`}
-                    >
-                      <NavDropdown.Item>
-                        <Link to="/ghostcar">Ghost Car</Link>
-                      </NavDropdown.Item>
-                      <br />
-                      <NavDropdown.Item href="#action2">
-                        Opening Duties
-                      </NavDropdown.Item>
-                      <br />
-                      <NavDropdown.Item href="#action3">
-                        Shift Change
-                      </NavDropdown.Item>
-                      <br />
-                      <NavDropdown.Item href="#action4">
-                        Closing Duties
-                      </NavDropdown.Item>
-                      <br />
-                      <NavDropdown.Item href="#action5">
-                        5 A day
-                      </NavDropdown.Item>
-                      <br />
-                      <NavDropdown.Item href="#action6">
-                        Rainy Day
-                      </NavDropdown.Item>
-                    </NavDropdown> */}
                     <button className="button-56" role="button">
                       <Nav.Link>
                         <Link to="/lists">List</Link>
@@ -122,6 +95,7 @@ export const Appbar = () => {
           </Navbar>
         ))}
       </>
+      <Weather />
     </div>
   );
 };
