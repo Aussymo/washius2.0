@@ -7,6 +7,24 @@ import "../../../styles/GhostCar.css";
 /// Need to figure out how to do e.target for map function
 
 export const GhostCar = () => {
+  const { store, actions } = useContext(Context);
+  const [error, setError] = useState(null);
+  const [full_name, setFull_name] = useState("");
+  const [conveyor_start, setConveyor_start] = useState();
+  const [pre_soak, sePre_soak] = useState();
+  const [under_carriage, setUnder_carriage] = useState();
+  const [wednesday_start, setWednesday_start] = useState();
+  const [thursday_start, setThursday_start] = useState();
+  const [friday_start, setFriday_start] = useState();
+  const [saturday_start, setSaturday_start] = useState();
+  const [sunday_end, setSunday_end] = useState();
+  const [monday_end, setMonday_end] = useState();
+  const [tuesday_end, setTuesday_end] = useState();
+  const [wednesday_end, setWednesday_end] = useState();
+  const [thursday_end, setThursday_end] = useState();
+  const [friday_end, setFriday_end] = useState();
+  const [saturday_end, setSaturday_end] = useState();
+  const history = useHistory("");
   const myFunction = () => {
     const element = document.getElementById("conveyor");
 
@@ -20,7 +38,7 @@ export const GhostCar = () => {
     "Pre soak",
     "Back windshield spray",
     "Scented spray",
-    "CTA’s",
+    "CTA",
     "Fusion bath",
     "Tire brushes",
     "Side blasters",
@@ -29,7 +47,7 @@ export const GhostCar = () => {
     "Fusion prime",
     "2nd set of wraps",
     "Bumper blast",
-    "More CTA’s",
+    "second CTA",
     "Grill brushes",
     "Top Omni",
     "Side omnis",
@@ -51,7 +69,7 @@ export const GhostCar = () => {
     document.getElementById(i).style.display = "none";
   };
   return (
-    <div>
+    <div className="list">
       <ListGroup as="ol" numbered>
         {groupList.map((item, i) => {
           return (

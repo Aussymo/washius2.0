@@ -96,12 +96,12 @@ class GhostCar(db.Model):
     fusion_bath = db.Column(db.String(80), unique=True, nullable=False)
     tire_brushes = db.Column(db.String(80), unique=True, nullable=False)
     side_blasters = db.Column(db.String(80), unique=True, nullable=False)
-    first_topbrush = db.Column(db.String(80), unique=True, nullable=False)
-    wrap1_ds_ps = db.Column(db.String(80), unique=True, nullable=False)
+    top_brush = db.Column(db.String(80), unique=True, nullable=False)
+    wrap_set1 = db.Column(db.String(80), unique=True, nullable=False)
     fusion_prime = db.Column(db.String(80), unique=True, nullable=False)
-    wrap2_ds_ps = db.Column(db.String(80), unique=True, nullable=False)
+    wrap_set2 = db.Column(db.String(80), unique=True, nullable=False)
     bumper_blaster = db.Column(db.String(80), unique=True, nullable=False)
-    second_ctas = db.Column(db.String(80), unique=True, nullable=False)
+    second_cta = db.Column(db.String(80), unique=True, nullable=False)
     girll_brushes = db.Column(db.String(80), unique=True, nullable=False)
     top_omni = db.Column(db.String(80), unique=True, nullable=False)
     side_omni = db.Column(db.String(80), unique=True, nullable=False)
@@ -130,12 +130,12 @@ class GhostCar(db.Model):
             "fusion_bath": self.fusion_bath,
             "tire_brushes": self.tire_brushes, 
             "side_blasters": self.side_blasters,
-            "first_topbrush": self.first_topbrush, 
+            "top_brush": self.top_brush,
             "wrap1_ds_ps": self.wrap1_ds_ps, 
             "fusion_prime": self.fusion_prime, 
             "wrap2_ds_ps": self.wrap2_ds_ps,
             "bumper_blaster": self.bumper_blaster, 
-            "second_ctas": self.second_ctas, 
+            "second_cta": self.second_cta, 
             "girll_brushes": self.girll_brushes,
             "top_omni": self.top_omni,
             "side_omni": self.side_omni, 
