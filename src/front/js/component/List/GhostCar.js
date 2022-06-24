@@ -1,5 +1,5 @@
 import { Button } from "bootstrap";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import ListGroup from "react-bootstrap/ListGroup";
 import { Appbar } from "../Appbar/Appbar.js";
 import "../../../styles/GhostCar.css";
@@ -7,7 +7,7 @@ import "../../../styles/GhostCar.css";
 /// Need to figure out how to do e.target for map function
 
 export const GhostCar = () => {
-  const { store, actions } = useContext(Context);
+  // const { store, actions } = useContext(Context);
   const [error, setError] = useState(null);
   const [full_name, setFull_name] = useState("");
   const [conveyor_start, setConveyor_start] = useState();
@@ -24,7 +24,7 @@ export const GhostCar = () => {
   const [thursday_end, setThursday_end] = useState();
   const [friday_end, setFriday_end] = useState();
   const [saturday_end, setSaturday_end] = useState();
-  const history = useHistory("");
+  // const history = useHistory("");
   const myFunction = () => {
     const element = document.getElementById("conveyor");
 
