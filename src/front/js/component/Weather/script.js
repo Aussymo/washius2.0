@@ -1,4 +1,4 @@
-//   displayWeather: function (data) {
+//   const displayWeather = (data) => {
 //     const { name } = data;
 //     const { icon, description } = data.weather[0];
 //     const { temp, humidity } = data.main;
@@ -15,10 +15,10 @@
 //     document.body.style.backgroundImage =
 //       "url('https://source.unsplash.com/1600x900/?" + name + "')";
 //   },
-//   search: function () {
+//   const search = () => {
 //     this.fetchWeather(document.querySelector(".search-bar").value);
 //   },
-// };
+// }
 
 // document.querySelector(".search button").addEventListener("click", function () {
 //   weather.search();
@@ -32,4 +32,4 @@
 //     }
 //   });
 
-// weather.fetchWeather("Clinton");
+// weather.fetchWeather("Layton");

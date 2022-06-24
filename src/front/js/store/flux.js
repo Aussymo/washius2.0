@@ -104,99 +104,24 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
       },
 
-      // schedule: async (
-      //   full_name,
-      //   sunday_start,
-      //   sunday_end,
-      //   monday_start,
-      //   monday_end,
-      //   tuesday_start,
-      //   tuesday_end,
-      //   wednesday_start,
-      //   wednesday_end,
-      //   thursday_start,
-      //   thursday_end,
-      //   friday_start,
-      //   friday_end,
-      //   saturday_start,
-      //   saturday_end,
-      //   history
-      // ) => {
-      //   try {
-      //     const opts = await fetch(process.env.BACKEND_URL + "/api/scheduler", {
-      //       method: "POST",
-      //       headers: {
-      //         "Content-Type": "application/json",
-      //         "Access-Control-Allow-Origin": "http://localhost:3000",
-      //       },
-      //       body: JSON.stringify({
-      //         full_name: full_name,
-      //         sunday_start: sunday_start,
-      //         sunday_end: sunday_end,
-      //         monday_start: monday_start,
-      //         monday_end: monday_end,
-      //         tuesday_start: tuesday_start,
-      //         tuesday_end: tuesday_end,
-      //         wednesday_start: wednesday_start,
-      //         wednesday_end: wednesday_end,
-      //         thursday_start: thursday_start,
-      //         thursday_end: thursday_end,
-      //         friday_start: friday_start,
-      //         friday_end: friday_end,
-      //         saturday_start: saturday_start,
-      //         saturday_end: saturday_end,
-      //       }),
-      //     });
-      //     if (opts.ok) {
-      //       getActions().getScheduler(full_name);
-      //       history.push("/scheduler");
-      //       return true;
-      //     } else {
-      //       throw "create schedule error";
-      //     }
-      //   } catch (error) {
-      //     throw Error("Encountered Error on creat schedule");
-      //   }
-      // },
-
-      // getSchedule: async (full_name) => {
-      //   try {
-      //     const resp = await fetch(
-      //       process.env.BACKEND_URL + "/api/scheduler/active",
-      //       {
-      //         method: "POST",
-      //         headers: {
-      //           "Content-Type": "application/json",
-      //         },
-      //         body: JSON.stringify({ full_name }),
-      //       }
-      //     );
-      //     const activeSchedule = await resp.json();
-      //     setStore({ schedule: activeSchedule });
-      //     sessionStorage.setItem("activeSchedule", activeSchedule);
-      //   } catch (error) {
-      //     throw Error("error on getSchedule");
-      //   }
-      // },
-
-      //  Weather = {
+      // Weather: async = () => {
       //   apiKey: "31485c2481a8c37efbb0227f3a40ff2e",
-      //   fetchWeather: function (city) {
-      //     fetch(
-      //       "https://api.openweathermap.org/data/2.5/weather?q=" +
-      //         city +
-      //         "&units=imperial&appid=" +
-      //         this.apiKey
-      //     )
-      //       .then((response) => {
-      //         if (!response.ok) {
-      //           alert("No weather found.");
-      //           throw new Error("No weather found.");
-      //         }
-      //         return response.json();
-      //       })
-      //       .then((data) => this.displayWeather(data));
-      //   },
+      //  fetchWeather = (city) => {
+      //   fetch(
+      //     "https://api.openweathermap.org/data/2.5/weather?q=" +
+      //       city +
+      //       "&units=imperial&appid=" +
+      //       this.apiKey
+      //   )
+      //     .then((response) => {
+      //       if (!response.ok) {
+      //         alert("No weather found.");
+      //         throw new Error("No weather found.");
+      //       }
+      //       return response.json();
+      //     })
+      //     .then((data) => this.displayWeather(data));
+      // },
 
       changeColor: (index, color) => {
         //get the store
