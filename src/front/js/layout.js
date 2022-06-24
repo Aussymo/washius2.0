@@ -6,7 +6,7 @@ import injectContext from "./store/appContext";
 
 import { Login } from "./pages/login";
 // import { OwnerLogin } from "./pages/operator";
-import { Scheduler } from "./pages/Scheduler";
+// import { Scheduler } from "./pages/Scheduler";
 import { Signup } from "./pages/signup";
 
 import { Appbar } from "./component/Appbar/Appbar";
@@ -38,9 +38,9 @@ const Layout = () => {
               <Events />
             </Route>
 
-            <Route exact path="/scheduler">
+            {/* <Route exact path="/scheduler">
               <Scheduler />
-            </Route>
+            </Route> */}
             <Route exact path="/lists">
               <Lists />
             </Route>

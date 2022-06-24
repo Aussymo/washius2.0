@@ -42,48 +42,48 @@ class Events(db.Model):
             "company" : self.company
         }
 
-class Schedule(db.Model):
-    schedule_id = db.Column(db.Integer, primary_key=True)
-    full_name = db.Column(db.String(80), unique=True, nullable=True)
-    monday_start = db.Column(db.String(120), unique=False, nullable=False)
-    monday_end = db.Column(db.String(120), unique=False, nullable=False)
-    tuesday_start = db.Column(db.String(120), unique=False, nullable=False)
-    tuesday_end = db.Column(db.String(120), unique=False, nullable=False)
-    wednesday_start = db.Column(db.String(120), unique=False, nullable=False)
-    wednesday_end = db.Column(db.String(120), unique=False, nullable=False)
-    thursday_start = db.Column(db.String(120), unique=False, nullable=False)
-    thursday_end = db.Column(db.String(120), unique=False, nullable=False)
-    friday_start = db.Column(db.String(120), unique=False, nullable=False)
-    friday_end = db.Column(db.String(120), unique=False, nullable=False)
-    saturday_start = db.Column(db.String(120), unique=False, nullable=False)
-    saturday_end = db.Column(db.String(120), unique=False, nullable=False)
-    sunday_start = db.Column(db.String(120), unique=False, nullable=False)
-    sunday_end = db.Column(db.String(120), unique=False, nullable=False)
+# class Schedule(db.Model):
+#     schedule_id = db.Column(db.Integer, primary_key=True)
+#     full_name = db.Column(db.String(80), unique=True, nullable=True)
+#     monday_start = db.Column(db.String(120), unique=False, nullable=False)
+#     monday_end = db.Column(db.String(120), unique=False, nullable=False)
+#     tuesday_start = db.Column(db.String(120), unique=False, nullable=False)
+#     tuesday_end = db.Column(db.String(120), unique=False, nullable=False)
+#     wednesday_start = db.Column(db.String(120), unique=False, nullable=False)
+#     wednesday_end = db.Column(db.String(120), unique=False, nullable=False)
+#     thursday_start = db.Column(db.String(120), unique=False, nullable=False)
+#     thursday_end = db.Column(db.String(120), unique=False, nullable=False)
+#     friday_start = db.Column(db.String(120), unique=False, nullable=False)
+#     friday_end = db.Column(db.String(120), unique=False, nullable=False)
+#     saturday_start = db.Column(db.String(120), unique=False, nullable=False)
+#     saturday_end = db.Column(db.String(120), unique=False, nullable=False)
+#     sunday_start = db.Column(db.String(120), unique=False, nullable=False)
+#     sunday_end = db.Column(db.String(120), unique=False, nullable=False)
     
 
 
-    def __repr__(self):
-        return f'<Schedule {self.full_name}>'
+#     def __repr__(self):
+#         return f'<Schedule {self.full_name}>'
 
-    def serialize(self):
-        return{
-            "schedule_id" : self.schedule_id,
-            "full_name" : self.full_name,
-            "sunday_start" : self.sunday_start,
-            "sunday_end" : self.sunday_end,
-            "monday_start" : self.monday_start,
-            "monday_end" : self.monday_end,
-            "tuesday_start" : self.tuesday_start,
-            "tuesday_end" : self.tuesday_end,
-            "wednesday_start" : self.wednesday_start,
-            "wednesday_end" : self.wednesday_end,
-            "thursday_start" : self.thursday_start,
-            "thursday_end" : self.thursday_end,
-            "friday_start" : self.friday_start,
-            "friday_end" : self.friday_end,
-            "saturday_start" : self.saturday_start,
-            "saturday_end" : self.saturday_end,
-        }
+#     def serialize(self):
+#         return{
+#             "schedule_id" : self.schedule_id,
+#             "full_name" : self.full_name,
+#             "sunday_start" : self.sunday_start,
+#             "sunday_end" : self.sunday_end,
+#             "monday_start" : self.monday_start,
+#             "monday_end" : self.monday_end,
+#             "tuesday_start" : self.tuesday_start,
+#             "tuesday_end" : self.tuesday_end,
+#             "wednesday_start" : self.wednesday_start,
+#             "wednesday_end" : self.wednesday_end,
+#             "thursday_start" : self.thursday_start,
+#             "thursday_end" : self.thursday_end,
+#             "friday_start" : self.friday_start,
+#             "friday_end" : self.friday_end,
+#             "saturday_start" : self.saturday_start,
+#             "saturday_end" : self.saturday_end,
+#         }
 
 
 class GhostCar(db.Model):

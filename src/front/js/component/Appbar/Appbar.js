@@ -6,7 +6,7 @@ import {
   Nav,
   NavDropdown,
 } from "react-bootstrap";
-import { Weather } from "../Weather/app.js";
+// import { Weather } from "../Weather/app.js";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "../Appbar/Appbar.css";
@@ -95,7 +95,7 @@ export const Appbar = () => {
           </Navbar>
         ))}
       </>
-      <Weather />
+      {/* <Weather /> */}
     </div>
   );
 };
