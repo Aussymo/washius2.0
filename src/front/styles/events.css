@@ -1,3 +1,65 @@
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-size: 120%;
+}
 .App {
   text-align: center;
+  background: #0000009c;
+  color: white;
+  padding: 2em;
+  border-radius: 15px;
+  width: 70%;
+  /* max-width: 420px; */
+  margin: 1em;
+  border-top-left-radius: 37px 140px;
+  border-top-right-radius: 23px 130px;
+  border-bottom-left-radius: 110px 19px;
+  border-bottom-right-radius: 120px 24px;
+}
+.Title {
+  border: none;
+  outline: none;
+  padding: 0.4em 1em;
+  border-radius: 24px;
+  background: #0000006b;
+  color: white;
+  font-family: inherit;
+  font-size: 105%;
+  width: calc(100% - 100px);
+}
+.addevent {
+  top: 50%;
+  background-color: #fcfcfc;
+  color: rgb(8, 0, 0);
+  border: none;
+  border-radius: 10px;
+}
+.rbc-today {
+  background-color: #00000036;
+}
+.Start {
+  border: none;
+  outline: none;
+  padding: 0.4em 1em;
+  border-radius: 24px;
+  background: #0000006b;
+  color: white;
+  font-family: inherit;
+  font-size: 105%;
+  width: 150px;
+}
+.End {
+  border: none;
+  outline: none;
+  padding: 0.4em 1em;
+  border-radius: 24px;
+  background: #0000006b;
+  color: white;
+  font-family: inherit;
+  font-size: 105%;
+  width: 150px;
 }
