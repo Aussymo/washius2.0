@@ -1,13 +1,3 @@
-:root {
-  --bg-blue: linear-gradient(to right, #104c74, #00b3cb);
-  --white: #fff;
-  --black: #000;
-  --blue: #268291;
-}
-body {
-  background: var(--bg-blue);
-  font-family: Monaco;
-}
 .logo {
   display: block;
   margin-left: auto;
@@ -16,8 +6,8 @@ body {
   width: 300px;
 }
 .form {
-  width: 500px;
-  height: 700px;
+  width: 600px;
+  height: 900px;
   background: transparent;
   margin-left: auto;
   margin-right: auto;

@@ -5,8 +5,12 @@
   --blue: #268291;
 }
 body {
-  background: var(--bg-blue);
-  font-family: Monaco;
+  background-image: url(https://images.unsplash.com/photo-1611239179213-d972da54091a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FyJTIwd2FzaHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.mb-3 {
+  margin-bottom: none;
 }
 .logo {
   display: block;
@@ -24,6 +28,7 @@ body {
   margin-top: 50px;
   border-radius: 5px;
   padding: 5px 40px;
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc;
 }
 .top {
   text-align: center;

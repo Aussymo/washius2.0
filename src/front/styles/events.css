@@ -8,17 +8,13 @@
 }
 .App {
   text-align: center;
-  background: #0000009c;
+  background: #a1a1a185;
   color: white;
-  padding: 2em;
+  padding: 0em;
   border-radius: 15px;
   width: 70%;
   /* max-width: 420px; */
   margin: 1em;
-  border-top-left-radius: 37px 140px;
-  border-top-right-radius: 23px 130px;
-  border-bottom-left-radius: 110px 19px;
-  border-bottom-right-radius: 120px 24px;
 }
 .Title {
   border: none;
@@ -33,13 +29,13 @@
 }
 .addevent {
   top: 50%;
-  background-color: #fcfcfc;
   color: rgb(8, 0, 0);
   border: none;
   border-radius: 10px;
+  margin-right: 20px;
 }
 .rbc-today {
-  background-color: #00000036;
+  background-color: #000000b7;
 }
 .Start {
   border: none;
@@ -62,4 +58,10 @@
   font-family: inherit;
   font-size: 105%;
   width: 150px;
+}
+.rbc-off-range-bg {
+  background: #fffdfd81;
+}
+.rbc-button-link {
+  color: #000000bd;
 }
