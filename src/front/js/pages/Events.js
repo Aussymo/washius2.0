@@ -48,7 +48,7 @@ const Events = () => {
     <div>
       <Appbar />
       <div className="body">
-        <div className="App">
+        <div className="App1">
           <h1 style={{ color: "white" }}>Calendar</h1>
           <div>
             <input

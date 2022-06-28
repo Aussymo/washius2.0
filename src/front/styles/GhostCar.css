@@ -30,11 +30,16 @@
 }
 .submitdiv {
   width: 100%;
-  padding: 15px 10px;
   font-size: 20px;
   border-radius: 5px;
   text-align: center;
 }
-/* .list {
-  background: #000000d0;
-} */
+.list {
+  width: 60%;
+  text-align: center;
+  margin: auto;
+}
+
+element.style {
+  padding: 0rem !important;
+}
