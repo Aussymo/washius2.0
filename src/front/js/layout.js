@@ -35,9 +35,6 @@ const Layout = () => {
             <Route exact path="/signup">
               <Signup />
             </Route>
-            <Route exact path="/app">
-              <Appbar />
-            </Route>
             <Route exact path="/events">
               <Events />
             </Route>
