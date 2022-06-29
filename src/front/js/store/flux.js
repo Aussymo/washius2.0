@@ -58,7 +58,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             console.log("this came from backend", opts);
             sessionStorage.setItem("token", JSON.stringify(data));
             getActions().getUser(email);
-            history.push("/");
+            history.push("/home");
             // setStore({ token: data.access_token })
             return true;
           } else {

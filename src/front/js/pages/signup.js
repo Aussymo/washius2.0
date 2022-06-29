@@ -30,7 +30,7 @@ export const Signup = () => {
             src="https://cdn.discordapp.com/attachments/617586904866619402/981352043421769728/Add_a_heading_2.png"
           />
           <br />
-          <a href="/login" className="Login">
+          <a href="/" className="Login">
             Login
           </a>
           <a href="/signup" className="Signup">
@@ -76,7 +76,7 @@ export const Signup = () => {
         )}
         <div className="submitdiv">
           <button
-            href="/"
+            href="/login"
             className="submitbtn glow-on-hover"
             placeholder="Sign up"
           >

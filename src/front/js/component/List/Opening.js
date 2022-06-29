@@ -56,7 +56,6 @@ export const Opening = () => {
       </div>
 
       <div>{`Items checked are: ${checkedItems}`}</div>
-      <button className="submitbtn glow-on-hover">Send</button>
     </div>
   );
 };

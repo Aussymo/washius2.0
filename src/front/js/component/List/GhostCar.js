@@ -7,12 +7,14 @@ import "../../../styles/GhostCar.css";
 /// Need to figure out how to do e.target for map function
 
 export const GhostCar = () => {
-  // const { store, actions } = useContext(Context);
-  const [error, setError] = useState(null);
-  const [conveyor_start, setConveyor_start] = useState();
-  const [pre_soak, sePre_soak] = useState();
-  const [under_carriage, setUnder_carriage] = useState();
-  // const history = useHistory("");
+  const [checked, setChecked] = useState([]);
+
+  const checkedItems = checked.length
+    ? checked.reduce((total, item) => {
+        return total + ", " + item;
+      })
+    : "";
+
   const myFunction = () => {
     const element = document.getElementById("conveyor");
 
@@ -72,6 +74,7 @@ export const GhostCar = () => {
         <div className="submitdiv">
           <button className="submitbtn glow-on-hover">Submit</button>
         </div>
+        <div>{`Items checked are: ${checkedItems}`}</div>
       </ListGroup>
     </div>
   );
