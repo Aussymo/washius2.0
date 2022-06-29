@@ -74,7 +74,6 @@ export const GhostCar = () => {
         <div className="submitdiv">
           <button className="submitbtn glow-on-hover">Submit</button>
         </div>
-        <div>{`Items checked are: ${checkedItems}`}</div>
       </ListGroup>
     </div>
   );

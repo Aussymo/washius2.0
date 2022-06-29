@@ -1,17 +1,14 @@
 .Switch {
   font-family: sans-serif;
-  font-size: 18px;
+  font-size: 24px;
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
   gap: 20px;
   height: 100vh;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
-.title {
-  font-size: 22px;
-  margin-bottom: 10px;
+.shifttitle {
+  color: rgba(247, 136, 0, 0.99);
 }
 .list-container {
   display: flex;

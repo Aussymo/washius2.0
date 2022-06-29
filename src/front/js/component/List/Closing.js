@@ -41,11 +41,18 @@ export const Closing = () => {
   return (
     <div className="Closing">
       <div className="checkList">
-        <div className="title">Opening Day:</div>
+        <div>
+          <h1 className="closingtitle">Closing day:</h1>
+        </div>
         <div className="list-container">
           {checkList.map((item, index) => (
             <div key={index}>
-              <input value={item} type="checkbox" onChange={handleCheck} />
+              <input
+                className="check"
+                value={item}
+                type="checkbox"
+                onChange={handleCheck}
+              />
               <span className={isChecked(item)}>{item}</span>
             </div>
           ))}
@@ -53,7 +60,6 @@ export const Closing = () => {
       </div>
 
       <div>{`Items checked are: ${checkedItems}`}</div>
-      <button className="submitbtn glow-on-hover">Send</button>
     </div>
   );
 };

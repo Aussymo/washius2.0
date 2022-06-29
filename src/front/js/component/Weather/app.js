@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+import "../Weather/app.css";
 
 const api = {
   key: "1320840331d2857d1e9b1ea22a7b0c1b",
   base: "https://api.openweathermap.org/data/2.5/",
 };
 
-function App() {
+export const Weather = () => {
   const [query, setQuery] = useState("");
   const [weather, setWeather] = useState({});
 
@@ -94,6 +95,4 @@ function App() {
       </main>
     </div>
   );
-}
-
-export default App;
+};

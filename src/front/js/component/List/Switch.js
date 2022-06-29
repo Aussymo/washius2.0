@@ -40,11 +40,18 @@ export const Switch = () => {
   return (
     <div className="Switch">
       <div className="checkList">
-        <div className="title">Shift Switch:</div>
+        <div>
+          <h1 className="shifttitle">Shift Switch:</h1>
+        </div>
         <div className="list-container">
           {checkList.map((item, index) => (
             <div key={index}>
-              <input value={item} type="checkbox" onChange={handleCheck} />
+              <input
+                className="check"
+                value={item}
+                type="checkbox"
+                onChange={handleCheck}
+              />
               <span className={isChecked(item)}>{item}</span>
             </div>
           ))}
@@ -52,7 +59,6 @@ export const Switch = () => {
       </div>
 
       <div>{`Items checked are: ${checkedItems}`}</div>
-      <button className="submitbtn glow-on-hover">Send</button>
     </div>
   );
 };
