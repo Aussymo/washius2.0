@@ -57,11 +57,11 @@ export const Appbar = () => {
                       </Nav.Link>
                     </button>
                     <br />
-                    <button className="button-56" role="button">
+                    {/* <button className="button-56" role="button">
                       <Nav.Link>
                         <Link to="scheduler">Scheduler</Link>
                       </Nav.Link>
-                    </button>
+                    </button> */}
                     <br />
 
                     <button className="button-56" role="button">

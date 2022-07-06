@@ -5,57 +5,89 @@ import "../../../styles/Five.css";
 /// havent even began editing this
 
 export function Five() {
-  const [todos, setTodos] = useState([
-    { label: "Sweep Lot", done: false },
-    { label: "Make the bed", done: false },
-    { label: "Walk the dog", done: false },
-    { label: "Do the replits", done: false },
-  ]);
-  const [data, setData] = useState([
-    { label: "Make the bed", done: false },
-    { label: "Walk the dog", done: false },
-    { label: "Do the replits", done: false },
-  ]);
-  // hoverstate from upmostly website, ?: is another way to put if else
-  const [isShown, setisShown] = useState(false);
-
-  const apiURL = "https://assets.breatheco.de/apis/fake/todos/user/austin";
-
-  const fetchTodos = () => {
-    fetch(apiURL)
-      .then((response) => response.json())
-      .then((data) => setTodos(data))
-      .catch((error) => console.error("This is an error:", error));
-    console.log(todos);
+  const [todoList, setTodoList] = useState([]);
+  const [isShown, setIsShown] = useState({
+    state: false,
+    index: 0,
+  });
+  const apiURL = "https://assets.breatheco.de/apis/fake/todos/user/Austin";
+  const createTodoList = async () => {
+    try {
+      const response = await fetch(apiURL, {
+        method: "POST",
+        body: JSON.stringify(todoList),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      if (response.ok) {
+        response.json();
+      }
+    } catch (error) {
+      throw Error(error);
+    }
   };
-
-  const addTodo = () => {
-    const brandNewTodos = [...todos, { label: data, done: false }];
-    setTodos(brandNewTodos);
-    return fetch(apiURL, {
-      method: "PUT",
-      body: JSON.stringify(brandNewTodos),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }).then((resp) => resp.json());
-    // .then((resp) => JSON.stringify(resp))
+  const getTodos = async () => {
+    try {
+      const response = await fetch(apiURL);
+      if (response.ok) {
+        const data = await response.json();
+        setTodoList(data);
+      }
+    } catch (error) {
+      throw Error(error);
+    }
+  };
+  const addTodo = async () => {
+    try {
+      const response = await fetch(apiURL, {
+        method: "PUT",
+        body: JSON.stringify(todoList),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      if (response.ok) {
+        response.json();
+        location.reload();
+      }
+    } catch (error) {
+      throw Error(error);
+    }
+  };
+  const removeTodo = async (i) => {
+    try {
+      const newArray = [...todoList];
+      newArray.splice(i, 1);
+      setTodoList(newArray);
+      const response = await fetch(apiURL, {
+        method: "PUT",
+        body: JSON.stringify(newArray),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      if (response.ok) {
+        response.json();
+      }
+    } catch (error) {
+      throw Error(error);
+    }
   };
   useEffect(() => {
-    fetchTodos();
+    getTodos();
   }, []);
-
-  const todo = todos.map((item, i) => {
+  const todo = todoList.map((item, i) => {
     return (
-      <div className="content" key={i}>
+      <div className="repeating" key={i}>
         <li
-          onMouseEnter={() => setisShown({ state: true, index: i })}
-          onMouseLeave={() => setisShown({ state: false, index: 0 })}
+          onMouseEnter={() => setIsShown({ state: true, index: i })}
+          onMouseLeave={() => setIsShown({ state: false, index: 0 })}
         >
-          {item.label}{" "}
+          {item.label}
           {isShown.state === true && isShown.index === i ? (
-            <button onClick={() => removeItem(i)}>
-              <strong>X</strong>
+            <button type="submit" onClick={() => removeTodo(i)}>
+              X
             </button>
           ) : (
             ""
@@ -64,43 +96,33 @@ export function Five() {
       </div>
     );
   });
-  const removeItem = (index) => {
-    const newArray = todos.filter((item, i) => i != index);
-    setTodos(newArray);
-  };
-  // on key down event is when user pushes button down. #13 is enter key
-  const newTodos = (event) => {
-    {
-      // if (onKeyDownEvent.keyCode === 13) {
-      setData(event.target.value);
-      // const brandNewTodos = [...todos, { label: userInput, done: false }];
-      // setTodos(brandNewTodos);
-      // onKeyDownEvent.target.value = "";
+  const newTodo = (onKeyDownEvent) => {
+    if (onKeyDownEvent.keyCode === 13) {
+      let userInput = onKeyDownEvent.target.value;
+      const allTodos = [...todoList, { done: false, label: userInput }];
+      setTodoList(allTodos);
+      onKeyDownEvent.target.value = "";
     }
   };
   return (
-    <div className="container">
-      <h1>5 A Day!</h1>
-      <div className="input-group">
+    <div className="box">
+      <h1 className="text-center">todos</h1>
+      <li className="d-flex justify-content-between">
         <input
-          onChange={newTodos}
+          onKeyDown={newTodo}
           type="text"
-          className="form-control"
-          placeholder="Add a task"
+          id="fname"
+          placeholder="What needs to be done?"
+          name="fname"
         />
-        <button
-          id="addbtn"
-          type="submit"
-          className="btn btn-success"
-          onClick={addTodo}
-        >
-          add
+        <button type="submit" onClick={addTodo}>
+          Add
         </button>
-      </div>
+      </li>
       <div>
         <ul>{todo}</ul>
         <div>
-          <ul className="tasks">{todo.length} task(s) left</ul>
+          <ul className="counter">{todo.length} item left</ul>
         </div>
       </div>
     </div>
