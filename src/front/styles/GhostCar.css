@@ -7,8 +7,9 @@
   color: #333;
   box-shadow: -3px 3px black, -2px 2px black, -1px 1px black;
   border: 1px solid black;
+  float: right;
 }
-.Yellow {
+/* .Yellow {
   border-radius: 100%;
   background-color: yellow;
   height: 25px;
@@ -17,7 +18,7 @@
   color: #333;
   box-shadow: -3px 3px black, -2px 2px black, -1px 1px black;
   border: 1px solid black;
-}
+} */
 .Red {
   border-radius: 100%;
   background-color: red;
@@ -27,6 +28,7 @@
   color: #333;
   box-shadow: -3px 3px black, -2px 2px black, -1px 1px black;
   border: 1px solid black;
+  float: right;
 }
 .submitdiv {
   width: 100%;

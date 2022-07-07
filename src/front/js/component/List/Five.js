@@ -86,7 +86,11 @@ export function Five() {
         >
           {item.label}
           {isShown.state === true && isShown.index === i ? (
-            <button type="submit" onClick={() => removeTodo(i)}>
+            <button
+              className="fivex"
+              type="submit"
+              onClick={() => removeTodo(i)}
+            >
               X
             </button>
           ) : (
@@ -106,7 +110,7 @@ export function Five() {
   };
   return (
     <div className="box">
-      <h1 className="text-center">todos</h1>
+      <h1 className="text-center">5 a day</h1>
       <li className="d-flex justify-content-between">
         <input
           onKeyDown={newTodo}
@@ -115,14 +119,16 @@ export function Five() {
           placeholder="What needs to be done?"
           name="fname"
         />
-        <button type="submit" onClick={addTodo}>
-          Add
-        </button>
       </li>
       <div>
         <ul>{todo}</ul>
         <div>
-          <ul className="counter">{todo.length} item left</ul>
+          <ul className="counter">{todo.length} item(s) left</ul>
+        </div>{" "}
+        <div>
+          <button className="Save" type="submit" onClick={addTodo}>
+            Save
+          </button>
         </div>
       </div>
     </div>
