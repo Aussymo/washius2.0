@@ -2,7 +2,7 @@ import format from "date-fns/format";
 import getDay from "date-fns/getDay";
 import parse from "date-fns/parse";
 import startOfWeek from "date-fns/startOfWeek";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import DatePicker from "react-datepicker";
@@ -44,6 +44,46 @@ const Events = () => {
   function handleAddEvent() {
     setAllEvents([...allEvents, newEvent]);
   }
+  const createEvent = async () => {
+    try {
+      const response = await fetch(
+        "https://calendar22.p.rapidapi.com/v1/calendars/7faec8c9-7202-4be5-9fc4-0de4e0d31d5f/events",
+        {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+            "X-RapidAPI-Key":
+              "f1b487ba3fmsh8673b2492246479p1ceecbjsn09ec8eb005f5",
+            "X-RapidAPI-Host": "calendar22.p.rapidapi.com",
+          },
+          body: '{"startTime":"2022-01-01T00:00:01Z","endTime":"2022-01-03T00:00:01Z","title":"test"}',
+        }
+      );
+      if (response.ok) {
+        const data = response.json();
+        console.log(data);
+        return true;
+      }
+    } catch (error) {
+      throw Error("error on calendar api");
+    }
+  };
+  const getEvent = async () => {
+    try {
+      const response = await fetch(
+        "https://calendar22.p.rapidapi.com/v1/calendars/7faec8c9-7202-4be5-9fc4-0de4e0d31d5f/events?startTime=2022-01-01T00%3A00%3A01Z&endTime=2022-01-03T00%3A00%3A01Z"
+      );
+      if (response.ok) {
+        const data = await response.json();
+        setNewEvent(data);
+      }
+    } catch (error) {
+      throw Error(error);
+    }
+  };
+  useEffect(() => {
+    createEvent();
+  }, []);
   return (
     <div>
       <Appbar />
