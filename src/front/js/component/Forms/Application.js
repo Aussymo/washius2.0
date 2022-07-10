@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-// import "../../../styles/Application.css";
+import "../../../styles/Application.css";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import emailjs from "emailjs-com";
@@ -29,6 +29,7 @@ export const Application = () => {
   };
   return (
     <div>
+      <h1>Application Form</h1>
       <Form ref={form} onSubmit={sendEmail}>
         <Form.Group className="mb-3" controlId="formBasicName">
           <Form.Label>Name</Form.Label>
@@ -44,7 +45,7 @@ export const Application = () => {
           <Form.Control type="tel" placeholder="Phone Number" name="number" />
         </Form.Group>
 
-        <h1>Position Information</h1>
+        <h2 className="PosTitle">Position Information</h2>
         <Form.Group className="mb-3">
           <Form.Label>Date of Availability</Form.Label>
           <Form.Control

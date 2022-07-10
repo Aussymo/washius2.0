@@ -85,7 +85,11 @@ export default function Forms() {
             </div>
           ) : null}
           {selectedTab === "Day Off" ? <div></div> : null}
-          {selectedTab === "Damage Claim" ? <div></div> : null}
+          {selectedTab === "Damage Claim" ? (
+            <div>
+              <Damage />
+            </div>
+          ) : null}
         </div>
       </div>
     </div>
