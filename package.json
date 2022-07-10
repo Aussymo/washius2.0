@@ -76,6 +76,7 @@
 		"@syncfusion/ej2-react-calendars": "^20.1.58",
 		"bootstrap": "^5.2.0-beta1",
 		"date-fns": "^2.28.0",
+		"emailjs-com": "^3.2.0",
 		"prop-types": "^15.6.1",
 		"react": "^16.8.4",
 		"react-big-calendar": "^0.40.2",

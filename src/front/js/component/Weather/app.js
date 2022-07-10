@@ -77,7 +77,7 @@ export const Weather = () => {
           />
         </div>
         {typeof weather.main != "undefined" ? (
-          <div>
+          <div className="searched-container">
             <div className="location-box">
               <div className="location">
                 {weather.name}, {weather.sys.country}
