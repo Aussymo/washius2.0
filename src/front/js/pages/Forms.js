@@ -3,6 +3,7 @@ import * as React from "react";
 import { Appbar } from "../component/Appbar/Appbar";
 import { Application } from "../component/Forms/Application";
 import { Damage } from "../component/Forms/Damage";
+import { Vacation } from "../component/Forms/Vacation";
 
 export default function Forms() {
   const items = ["Applications", "Damage Claims", "Day Off"];
@@ -92,7 +93,7 @@ export default function Forms() {
           ) : null}
           {selectedTab === "Day Off" ? (
             <div>
-              <Application />
+              <Vacation />
             </div>
           ) : null}
         </div>
