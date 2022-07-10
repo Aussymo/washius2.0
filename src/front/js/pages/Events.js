@@ -27,16 +27,6 @@ const events = [
     start: new Date(2021, 6, 0),
     end: new Date(2021, 6, 0),
   },
-  {
-    title: "Vacation",
-    start: new Date(2021, 6, 7),
-    end: new Date(2021, 6, 10),
-  },
-  {
-    title: "Conference",
-    start: new Date(2021, 6, 20),
-    end: new Date(2021, 6, 23),
-  },
 ];
 const Events = () => {
   const [newEvent, setNewEvent] = useState({ title: "", start: "", end: "" });
@@ -44,7 +34,23 @@ const Events = () => {
   function handleAddEvent() {
     setAllEvents([...allEvents, newEvent]);
   }
-  const createEvent = async () => {
+
+  const createCalendar = {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+      "X-RapidAPI-Key": "f1b487ba3fmsh8673b2492246479p1ceecbjsn09ec8eb005f5",
+      "X-RapidAPI-Host": "calendar22.p.rapidapi.com",
+    },
+    body: JSON.stringify(allEvents),
+  };
+
+  fetch("https://calendar22.p.rapidapi.com/v1/calendars", options)
+    .then((response) => response.json())
+    .then((response) => console.log(response))
+    .catch((err) => console.error(err));
+
+  const addEvent = async () => {
     try {
       const response = await fetch(
         "https://calendar22.p.rapidapi.com/v1/calendars/7faec8c9-7202-4be5-9fc4-0de4e0d31d5f/events",
@@ -56,7 +62,7 @@ const Events = () => {
               "f1b487ba3fmsh8673b2492246479p1ceecbjsn09ec8eb005f5",
             "X-RapidAPI-Host": "calendar22.p.rapidapi.com",
           },
-          body: '{"startTime":"2022-01-01T00:00:01Z","endTime":"2022-01-03T00:00:01Z","title":"test"}',
+          body: JSON.stringify(newEvent),
         }
       );
       if (response.ok) {
@@ -75,15 +81,16 @@ const Events = () => {
       );
       if (response.ok) {
         const data = await response.json();
-        setNewEvent(data);
+        setAllEvents(data);
       }
     } catch (error) {
       throw Error(error);
     }
   };
   useEffect(() => {
-    createEvent();
+    getEvent();
   }, []);
+
   return (
     <div>
       <Appbar />

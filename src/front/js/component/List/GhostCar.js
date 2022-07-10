@@ -1,13 +1,36 @@
 import { Button } from "bootstrap";
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useRef } from "react";
 import ListGroup from "react-bootstrap/ListGroup";
 import { Appbar } from "../Appbar/Appbar.js";
 import "../../../styles/GhostCar.css";
+import emailjs from "emailjs-com";
 
 /// Need to figure out how to do e.target for map function
 
 export const GhostCar = () => {
   const [checked, setChecked] = useState([]);
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_11ud0kg",
+        "template_hj0ed6x",
+        e.target,
+        "vxCL0Au2qXpvkA_8l"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    e.target.reset();
+  };
 
   const checkedItems = checked.length
     ? checked.reduce((total, item) => {
@@ -60,21 +83,32 @@ export const GhostCar = () => {
   };
   return (
     <div className="list">
-      <ListGroup as="ol" numbered>
+      <form as="ol" numbered onSubmit={sendEmail}>
         {groupList.map((item, i) => {
           return (
             <ListGroup.Item as="li" key={i}>
               {item}
-              <input type="text" id={i} style={{ display: "none" }} />
+              <input
+                type="text"
+                id={i}
+                style={{ display: "none" }}
+                name="message"
+              />
               <button className="Green" onClick={() => hideInput(i)}></button>
               <button className="Red" onClick={() => displayInput(i)}></button>
             </ListGroup.Item>
           );
         })}
         <div className="submitdiv">
-          <button className="submitbtn glow-on-hover">Submit</button>
+          <button
+            type="submit"
+            className="submitbtn glow-on-hover"
+            value="send"
+          >
+            Submit
+          </button>
         </div>
-      </ListGroup>
+      </form>
     </div>
   );
 };
