@@ -2,6 +2,7 @@ import { TabPanel, useTabs } from "react-headless-tabs";
 import * as React from "react";
 import { Appbar } from "../component/Appbar/Appbar";
 import { Application } from "../component/Forms/Application";
+import { Damage } from "../component/Forms/Damage";
 
 export default function Forms() {
   const items = ["Applications", "Damage Claims", "Day Off"];
@@ -84,8 +85,16 @@ export default function Forms() {
               <Application />
             </div>
           ) : null}
-          {selectedTab === "Day Off" ? <div></div> : null}
-          {selectedTab === "Damage Claim" ? <div></div> : null}
+          {selectedTab === "Damage Claims" ? (
+            <div>
+              <Damage />
+            </div>
+          ) : null}
+          {selectedTab === "Day Off" ? (
+            <div>
+              <Application />
+            </div>
+          ) : null}
         </div>
       </div>
     </div>
