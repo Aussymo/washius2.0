@@ -1,8 +1,8 @@
 import React, { useRef } from "react";
-import "../../../styles/Application.css";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import emailjs from "emailjs-com";
+import "../../../styles/Application.css";
 
 export const Application = () => {
   const form = useRef();
