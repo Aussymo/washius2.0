@@ -4,9 +4,15 @@ import { Appbar } from "../component/Appbar/Appbar";
 import { Application } from "../component/Forms/Application";
 import { Damage } from "../component/Forms/Damage";
 import { Vacation } from "../component/Forms/Vacation";
+import { Customer } from "../component/Forms/Customer";
 
 export default function Forms() {
-  const items = ["Applications", "Damage Claims", "Day Off"];
+  const items = [
+    "Applications",
+    "Damage Claims",
+    "Day Off",
+    "Customer Feedback",
+  ];
   const [selectedTab, setSelectedTab] = useTabs(items);
   const changeTab = (e) => {
     // e.preventDefault();
@@ -94,6 +100,11 @@ export default function Forms() {
           {selectedTab === "Day Off" ? (
             <div>
               <Vacation />
+            </div>
+          ) : null}
+          {selectedTab === "Customer Feedback" ? (
+            <div>
+              <Customer />
             </div>
           ) : null}
         </div>
