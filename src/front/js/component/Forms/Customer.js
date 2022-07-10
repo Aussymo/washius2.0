@@ -4,32 +4,32 @@ import Button from "react-bootstrap/Button";
 import emailjs from "emailjs-com";
 
 export const Customer = () => {
-  //   const form = useRef();
+  const form = useRef();
 
-  //   const sendEmail = (e) => {
-  //     e.preventDefault();
+  const sendEmail = (e) => {
+    e.preventDefault();
 
-  //     emailjs
-  //       .sendForm(
-  //         "service_11ud0kg",
-  //         "template_hj0ed6x",
-  //         e.target,
-  //         "vxCL0Au2qXpvkA_8l"
-  //       )
-  //       .then(
-  //         (result) => {
-  //           console.log(result.text);
-  //         },
-  //         (error) => {
-  //           console.log(error.text);
-  //         }
-  //       );
-  //     e.target.reset();
-  //   };
+    emailjs
+      .sendForm(
+        "service_slrpvmg",
+        "template_oxjahzg",
+        e.target,
+        "pCLB211ENFXHLpwIj"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    e.target.reset();
+  };
   return (
     <div>
       <h1>Customer Information</h1>
-      <Form>
+      <Form ref={form} onSubmit={sendEmail}>
         <Form.Group className="mb-3" controlId="formBasicName">
           <Form.Label>Customer Name</Form.Label>
           <Form.Control type="name" placeholder="Full Name" name="name" />

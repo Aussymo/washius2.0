@@ -11,10 +11,10 @@ export const Damage = () => {
 
     emailjs
       .sendForm(
-        "service_11ud0kg",
-        "template_hj0ed6x",
+        "service_slrpvmg",
+        "template_nl65kql",
         e.target,
-        "vxCL0Au2qXpvkA_8l"
+        "pCLB211ENFXHLpwIj"
       )
       .then(
         (result) => {
