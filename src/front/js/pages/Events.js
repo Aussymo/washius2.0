@@ -35,61 +35,61 @@ const Events = () => {
     setAllEvents([...allEvents, newEvent]);
   }
 
-  const createCalendar = {
-    method: "POST",
-    headers: {
-      "content-type": "application/json",
-      "X-RapidAPI-Key": "f1b487ba3fmsh8673b2492246479p1ceecbjsn09ec8eb005f5",
-      "X-RapidAPI-Host": "calendar22.p.rapidapi.com",
-    },
-    body: JSON.stringify(allEvents),
-  };
+  // const createCalendar = {
+  //   method: "POST",
+  //   headers: {
+  //     "content-type": "application/json",
+  //     "X-RapidAPI-Key": "f1b487ba3fmsh8673b2492246479p1ceecbjsn09ec8eb005f5",
+  //     "X-RapidAPI-Host": "calendar22.p.rapidapi.com",
+  //   },
+  //   body: JSON.stringify(allEvents),
+  // };
 
-  fetch("https://calendar22.p.rapidapi.com/v1/calendars", options)
-    .then((response) => response.json())
-    .then((response) => console.log(response))
-    .catch((err) => console.error(err));
+  // fetch("https://calendar22.p.rapidapi.com/v1/calendars", options)
+  //   .then((response) => response.json())
+  //   .then((response) => console.log(response))
+  //   .catch((err) => console.error(err));
 
-  const addEvent = async () => {
-    try {
-      const response = await fetch(
-        "https://calendar22.p.rapidapi.com/v1/calendars/7faec8c9-7202-4be5-9fc4-0de4e0d31d5f/events",
-        {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-            "X-RapidAPI-Key":
-              "f1b487ba3fmsh8673b2492246479p1ceecbjsn09ec8eb005f5",
-            "X-RapidAPI-Host": "calendar22.p.rapidapi.com",
-          },
-          body: JSON.stringify(newEvent),
-        }
-      );
-      if (response.ok) {
-        const data = response.json();
-        console.log(data);
-        return true;
-      }
-    } catch (error) {
-      throw Error("error on calendar api");
-    }
-  };
-  const getEvent = async () => {
-    try {
-      const response = await fetch(
-        "https://calendar22.p.rapidapi.com/v1/calendars/7faec8c9-7202-4be5-9fc4-0de4e0d31d5f/events?startTime=2022-01-01T00%3A00%3A01Z&endTime=2022-01-03T00%3A00%3A01Z"
-      );
-      if (response.ok) {
-        const data = await response.json();
-        setAllEvents(data);
-      }
-    } catch (error) {
-      throw Error(error);
-    }
-  };
-  useEffect(() => {
-    getEvent();
-  }, []);
+  // const addEvent = async () => {
+  //   try {
+  //     const response = await fetch(
+  //       "https://calendar22.p.rapidapi.com/v1/calendars/7faec8c9-7202-4be5-9fc4-0de4e0d31d5f/events",
+  //       {
+  //         method: "POST",
+  //         headers: {
+  //           "content-type": "application/json",
+  //           "X-RapidAPI-Key":
+  //             "f1b487ba3fmsh8673b2492246479p1ceecbjsn09ec8eb005f5",
+  //           "X-RapidAPI-Host": "calendar22.p.rapidapi.com",
+  //         },
+  //         body: JSON.stringify(newEvent),
+  //       }
+  //     );
+  //     if (response.ok) {
+  //       const data = response.json();
+  //       console.log(data);
+  //       return true;
+  //     }
+  //   } catch (error) {
+  //     throw Error("error on calendar api");
+  //   }
+  // };
+  // const getEvent = async () => {
+  //   try {
+  //     const response = await fetch(
+  //       "https://calendar22.p.rapidapi.com/v1/calendars/7faec8c9-7202-4be5-9fc4-0de4e0d31d5f/events?startTime=2022-01-01T00%3A00%3A01Z&endTime=2022-01-03T00%3A00%3A01Z"
+  //     );
+  //     if (response.ok) {
+  //       const data = await response.json();
+  //       setAllEvents(data);
+  //     }
+  //   } catch (error) {
+  //     throw Error(error);
+  //   }
+  // };
+  // useEffect(() => {
+  //   getEvent();
+  // }, []);
 
   return (
     <div>
@@ -109,13 +109,13 @@ const Events = () => {
             />
             <DatePicker
               className="Start"
-              placeholderText="Start Date"
+              placeholderText="Start"
               selected={newEvent.start}
               onChange={(start) => setNewEvent({ ...newEvent, start })}
             />
             <DatePicker
               className="End"
-              placeholderText="End Date"
+              placeholderText="End"
               selected={newEvent.end}
               onChange={(end) => setNewEvent({ ...newEvent, end })}
             />

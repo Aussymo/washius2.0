@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../Weather/app.css";
+import { faCoffee } from "@fortawesome/free-solid-svg-icons";
 
 const api = {
   key: "1320840331d2857d1e9b1ea22a7b0c1b",
@@ -65,12 +66,13 @@ export const Weather = () => {
           : "app"
       }
     >
+      <h1 classname="weather-title">Weather</h1>
       <main>
         <div className="search-box">
           <input
             type="text"
             className="search-bar"
-            placeholder="Search..."
+            placeholder="City Name"
             onChange={(e) => setQuery(e.target.value)}
             value={query}
             onKeyPress={search}
