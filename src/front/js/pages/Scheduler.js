@@ -105,114 +105,114 @@ export const Scheduler = () => {
                   </td>
                   <td>
                     <input
-                      type="Time"
-                      placeholder="Time"
+                      type="text"
+                      placeholder="Start Time"
                       value={sunday_start}
                       onChange={myFunction(u.id)}
-                      name="message"
+                      name="message1start"
                     />
                     <input
-                      type="Time"
-                      placeholder="Time"
+                      type="text"
+                      placeholder="End Time"
                       value={sunday_end}
                       onChange={myFunction(u.id)}
-                      name="message"
+                      name="message1end"
                     />
                   </td>
                   <td>
                     <input
-                      type="Time"
-                      placeholder="Time"
+                      type="text"
+                      placeholder="Start Time"
                       value={monday_start}
                       onChange={myFunction(u.id)}
-                      name="message"
+                      name="message2start"
                     />
                     <input
-                      type="Time"
-                      placeholder="Time"
+                      type="text"
+                      placeholder="End Time"
                       value={monday_end}
                       onChange={myFunction(u.id)}
-                      name="message"
+                      name="message2end"
                     />
                   </td>
                   <td>
                     <input
-                      type="Time"
-                      placeholder="Time"
+                      type="text"
+                      placeholder="Start Time"
                       value={tuesday_start}
                       onChange={myFunction(u.id)}
-                      name="message"
+                      name="message3start"
                     />
                     <input
-                      type="Time"
-                      placeholder="Time"
+                      type="text"
+                      placeholder="End Time"
                       value={tuesday_end}
                       onChange={myFunction(u.id)}
-                      name="message"
+                      name="message3end"
                     />
                   </td>
                   <td>
                     <input
-                      type="Time"
-                      placeholder="Time"
+                      type="text"
+                      placeholder="Start Time"
                       value={wednesday_start}
                       onChange={myFunction(u.id)}
-                      name="message"
+                      name="message4start"
                     />
                     <input
-                      type="Time"
-                      placeholder="Time"
+                      type="text"
+                      placeholder="End Time"
                       value={wednesday_end}
                       onChange={myFunction(u.id)}
-                      name="message"
+                      name="message4end"
                     />
                   </td>
                   <td>
                     <input
-                      type="Time"
-                      placeholder="Time"
+                      type="text"
+                      placeholder="Start Time"
                       value={thursday_start}
                       onChange={myFunction(u.id)}
-                      name="message"
+                      name="message5start"
                     />
                     <input
-                      type="Time"
-                      placeholder="Time"
+                      type="text"
+                      placeholder="End Time"
                       value={thursday_end}
                       onChange={myFunction(u.id)}
-                      name="message"
+                      name="message5end"
                     />
                   </td>
                   <td>
                     <input
-                      type="Time"
-                      placeholder="Time"
+                      type="text"
+                      placeholder="Start Time"
                       value={friday_start}
                       onChange={myFunction(u.id)}
-                      name="message"
+                      name="message6start"
                     />
                     <input
-                      type="Time"
-                      placeholder="Time"
+                      type="text"
+                      placeholder="End Time"
                       value={friday_end}
                       onChange={myFunction(u.id)}
-                      name="message"
+                      name="message6end"
                     />
                   </td>
                   <td>
                     <input
-                      type="Time"
-                      placeholder="Time"
+                      type="text"
+                      placeholder="Start Time"
                       value={saturday_start}
                       onChange={myFunction(u.id)}
-                      name="message"
+                      name="message7start"
                     />
                     <input
-                      type="Time"
-                      placeholder="Time"
+                      type="text"
+                      placeholder="End Time"
                       value={saturday_end}
                       onChange={myFunction(u.id)}
-                      name="message"
+                      name="message7end"
                     />
                   </td>
                   <td>

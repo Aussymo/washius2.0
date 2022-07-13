@@ -83,7 +83,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             const token = await opts.json();
             sessionStorage.setItem("token", JSON.stringify(token));
             getActions().getUser(email);
-            history.push("/login");
+            history.push("/");
             return true;
           } else {
             throw "create user error";
