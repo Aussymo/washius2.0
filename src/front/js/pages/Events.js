@@ -24,8 +24,8 @@ const events = [
   {
     title: "Grease Bearing",
     allDay: true,
-    start: new Date(2022, 7, 15),
-    end: new Date(2021, 7, 15),
+    start: new Date(2022, 7, 7),
+    end: new Date(2021, 7, 7),
   },
   {
     title: "clean Trench",
