@@ -96,9 +96,8 @@ export const Scheduler = () => {
                 <tr key={u.id}>
                   <td>
                     <div
-                      name="name"
-                      //   value={u.full_name}
-                      //   onChange={(e) => setFull_name(e.target.value)}
+                    // value={u.full_name}
+                    // onChange={(e) => setFull_name(e.target.value)}
                     >
                       {u.full_name}
                     </div>

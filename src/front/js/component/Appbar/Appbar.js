@@ -15,7 +15,7 @@ export const Appbar = () => {
   const history = useHistory("");
   const logout = () => {
     sessionStorage.clear();
-    history.push("/login");
+    history.push("/");
     console.log("logout");
     location.reload();
   };

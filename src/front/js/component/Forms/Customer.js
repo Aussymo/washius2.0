@@ -9,14 +9,11 @@ export const Customer = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm(
-        "service_slrpvmg",
-        "template_oxjahzg",
-        e.target,
-        "pCLB211ENFXHLpwIj"
-      )
-      .then(
+    emailjs.sendForm;
+    "service_11ud0kg",
+      "template_hj0ed6x",
+      e.target,
+      "vxCL0Au2qXpvkA_8l"().then(
         (result) => {
           console.log(result.text);
         },

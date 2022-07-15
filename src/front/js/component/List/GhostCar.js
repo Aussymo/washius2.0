@@ -11,15 +11,16 @@ export const GhostCar = () => {
   const [checked, setChecked] = useState([]);
   const form = useRef();
 
+  //alekreed98@gmail.com
   const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs
       .sendForm(
-        "service_11ud0kg",
-        "template_hj0ed6x",
+        "service_slrpvmg",
+        "template_oxjahzg",
         e.target,
-        "vxCL0Au2qXpvkA_8l"
+        "pCLB211ENFXHLpwIj"
       )
       .then(
         (result) => {
@@ -94,8 +95,17 @@ export const GhostCar = () => {
                 style={{ display: "none" }}
                 name="message"
               />
-              <button className="Green" onClick={() => hideInput(i)}></button>
-              <button className="Red" onClick={() => displayInput(i)}></button>
+              <button
+                type="button"
+                className="Green"
+                onClick={() => hideInput(i)}
+                name="good"
+              ></button>
+              <button
+                type="button"
+                className="Red"
+                onClick={() => displayInput(i)}
+              ></button>
             </ListGroup.Item>
           );
         })}
