@@ -22,10 +22,16 @@ const localizer = dateFnsLocalizer({
 });
 const events = [
   {
-    title: "Big Meeting",
+    title: "Grease Bearing",
     allDay: true,
-    start: new Date(2021, 6, 0),
-    end: new Date(2021, 6, 0),
+    start: new Date(2022, 7, 15),
+    end: new Date(2021, 7, 15),
+  },
+  {
+    title: "clean Trench",
+    allDay: true,
+    start: new Date(2022, 7, 1),
+    end: new Date(2021, 7, 1),
   },
 ];
 const Events = () => {
